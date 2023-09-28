@@ -1,0 +1,98 @@
+.tablaJuego {
+  background-color: #a00;
+  border: 1px solid #000;
+  background: url("/public/fondoJuego.jpg") no-repeat;
+  background-size: cover;
+}
+.itemSietes {                 /*Imagenes */
+  width: 170px;
+  background-color: transparent;
+  padding: 30px 20px 0px 20px;
+  filter: drop-shadow(4px 4px #fff);
+}
+
+
+
+
+.marquee-wrapper{
+  display: inline-flex;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: darkred;
+  padding: 10px 20px 10px 0;
+}
+.marquee-wrapper .container{
+  overflow:hidden;
+  text-align:center;
+
+}
+.marquee-inner span{
+  height:50%;
+}
+.marquee-wrapper .marquee-block{
+  width: 250px;
+  height: 720px;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0px 0px 0px 20px;
+  background: darkred;
+  background: url("/public/fondoJuego.jpg") no-repeat;
+  background-size: cover;
+}
+.marquee-inner{
+  display: block;
+  position: absolute;
+}
+.marquee-inner.to-bottom{
+  animation: marqueeBottom 0.4s linear;
+  -webkit-animation: marqueeBottom 0.4s linear;
+  -moz-animation: marqueeBottom 0.4s linear;
+  -o-animation: marqueeBottom 0.4s linear;
+}
+.marquee-item{
+  width: 240px;
+  height: 240px;
+  display: block;
+  margin:0 5px 0 5px;
+  transition: all .2s ease-out;
+}
+@keyframes marqueeBottom{
+  0% { top: -100%; }
+  100% { top: 0; }
+}
+@-webkit-keyframes marqueeBottom{
+  0% { top: -100%; }
+  100% { top: 0; }
+}
+@-moz-keyframes marqueeBottom{
+  0% { top: -100%; }
+  100% { top: 0; }
+}
+@-o-keyframes marqueeBottom{
+  0% { top: -100%; }
+  100% { top: 0; }
+}
+
+
+
+
+
+
+
+.Boton-jugar-sietes {
+  color: #fff;
+  background-color: #500;
+  padding: 15px 0 15px 0;
+  letter-spacing: 10px;
+  font-size: calc(10px + 2vmin);
+  font-weight: bolder;
+  width: 50vw;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
+}
+
+
+
+
+
+

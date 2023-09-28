@@ -1,0 +1,31 @@
+.itemVideopoker {                 /*Imagenes */
+  width: 12vw;
+  height: 15vh;
+  background-color: #fff;
+}
+.espacio {
+  width: 0vmin;
+}
+
+.Tabla-juego {
+  font-size: 6vw;
+  border-collapse: collapse;
+}
+.Tabla-juego td{
+  padding: 0 20px 0 20px;
+}
+
+.Boton-jugar-videopoker {
+  color: #fff;
+  background-color: #500;
+  padding: 15px 0 15px 0;
+  letter-spacing: 10px;
+  font-size: calc(10px + 2vmin);
+  font-weight: bolder;
+  width: 50vw;
+  cursor: pointer;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
+}
+
+
+

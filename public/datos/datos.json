@@ -1,0 +1,13 @@
+{
+  "nombre": "Jorge",
+  "credito": 2000000,
+  "acumulado":100,
+  "sietes": {
+    "apuesta": 0,
+    "ganancia": 0
+  }, 
+  "videopoker": {
+    "apuesta": 0,
+    "ganancia": 0
+  }
+}

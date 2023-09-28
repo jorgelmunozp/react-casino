@@ -1,0 +1,119 @@
+.App {
+  font: 'Century Gothic', Helvetica, Arial, sans-serif;
+}
+
+.App-header {
+  width: 100%;
+  background-color: #282c34;
+  min-height: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.App-tabla-credito {								                /***** Tabla credito *****/
+  margin-left: -47vw;
+}
+.App-tabla-logo {
+  position: absolute;
+  top: 0;
+  right: 45%;
+  left: auto;
+}
+.App-logo {                                       /***** Logo *****/
+  height: 65px;
+  pointer-events: none;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
+}
+.App-header h1,h2 {								                /***** Titulo header *****/
+  font: 20px 'Century Gothic', Helvetica, Arial, sans-serif;
+  letter-spacing: 2px;
+  font-size: calc(20px + 2vmin);
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+  position: static;
+}
+
+
+.App-link {
+  color: #61dafb;
+}
+
+.App-nav {
+  position: absolute;
+  display: inline-flex;
+  list-style-type: none;
+  top: 20px;
+  right: 50px;
+}
+.App-nav-item {
+  width: calc(55px + 5vw);
+  padding: 10px 0 10px 0;
+  background-color: darkred;
+  color: #fff;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+}
+
+.App-body {
+  background-color: #282c34;
+  min-height: 710px;
+  font-size: calc(20px + 2vmin);
+  background: url("/public/fondo.jpg") no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+.App-body table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.App-body-divTablero {
+  width: 100%;
+  text-align: center;
+}
+.App-body-divJuego {
+  width: 100%;
+  text-align: center;
+}
+
+/**** Tabla crédito, apuesta, ganancia y acumulado **************/
+.tablaCredito {
+  background-color: #282c34;
+  width: 100%;
+  text-align: center;
+}
+.iconoMonedaTablero {
+  color: gold;
+}
+.iconoBilleteTablero {
+  color: green;
+}
+input[type='number'] {
+  width: 98%;
+  height: inherit;
+  font-size: inherit;
+  text-align: center;
+  background-color: transparent;
+  color: inherit;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  opacity: 1;
+  height: calc(12px + 5vmin);
+  cursor: pointer;
+  padding: 0 15px 0 15px;
+}
+
+/************** Botones **************/
+.App-body button {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  cursor: pointer;
+}
+
+
+
