@@ -1,5 +1,6 @@
 {
-  "name": "casino",
+  "name": "react-casino",
+  "homepage": "https://jorgelmunozp.github.io/react-casino/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,6 +10,7 @@
     "browserify-fs": "^1.0.0",
     "fetch-blob": "^3.1.4",
     "fs": "^0.0.1-security",
+    "gh-pages": "^6.0.0",
     "node-fetch": "^2.6.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -19,6 +21,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
