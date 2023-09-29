@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/status-close-ff3333">
 </p>
 
-* Demo: [Casino](https://jorgelmunozp.github.io/react-cine-facturacion/)
+* Demo: [Casino](https://jorgelmunozp.github.io/react-casino/)
 
 ***
 
