@@ -123,6 +123,7 @@ const Juego1 = ({credito,setCredito,acumulado,setAcumulado}) => {
               </tr>
             </tbody>
           </table> 
+          <br/>
           <button type='button' className='Boton-jugar-videopoker' onClick={() => itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,colorItemWin,setColorItemWin,audioMayor,audioCuadruple,audioTriple,audioCoin)}>JUGAR</button>
         </div>
 

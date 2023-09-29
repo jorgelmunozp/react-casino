@@ -30,11 +30,11 @@ import { RiCoinFill } from 'react-icons/ri';
 const bet = 10;
 const colorWin = 'rgb(255,215,0,1)';
 
- const itemsLista = [<img src={siete} className='itemSietes'/>,<img src={bar} className='itemSietes'/>,<img src={doblebar} className='itemSietes'/>,<img src={triplebar} className='itemSietes'/>,
-                     <img src={estrella} className='itemSietes'/>,<img src={cerezas} className='itemSietes'/>,<img src={sandia} className='itemSietes'/>,<img src={limon} className='itemSietes'/>,
-                     <img src={uvas} className='itemSietes'/>,<img src={naranja} className='itemSietes'/>,<img src={fresa} className='itemSietes'/>,<img src={banano} className='itemSietes'/>,
-                     <img src={pera} className='itemSietes'/>,<img src={arandano} className='itemSietes'/>,<img src={manzana} className='itemSietes'/>,
-                     <img src={trebol} className='itemSietes'/>,<img src={campana} className='itemSietes'/>];
+ const itemsLista = [<img src={siete} alt='7' className='itemSietes'/>,<img src={bar} alt='㍴' className='itemSietes'/>,<img src={doblebar} alt='㍴㍴' className='itemSietes'/>,<img src={triplebar} alt='㍴㍴㍴' className='itemSietes'/>,
+                     <img src={estrella} alt='⭐' className='itemSietes'/>,<img src={cerezas} alt='🍒' className='itemSietes'/>,<img src={sandia} alt='🍉' className='itemSietes'/>,<img src={limon} alt='🍋' className='itemSietes'/>,
+                     <img src={uvas} alt='🍇' className='itemSietes'/>,<img src={naranja} alt='🟠' className='itemSietes'/>,<img src={fresa} alt='🍓' className='itemSietes'/>,<img src={banano} alt='🍌' className='itemSietes'/>,
+                     <img src={pera} alt='🍐' className='itemSietes'/>,<img src={arandano} alt='🫐' className='itemSietes'/>,<img src={manzana} alt='🍎' className='itemSietes'/>,
+                     <img src={trebol} alt='🍀' className='itemSietes'/>,<img src={campana} alt='🔔' className='itemSietes'/>];
 
                      const formatterPeso = new Intl.NumberFormat('es-CO', {   //Formato moneda $ pesos Colmbianos
   style: 'currency',
@@ -108,13 +108,13 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
       <div className="App">
 
 
-<button onClick={handleClick}>Run animation</button>
+{/* <button onClick={handleClick}>Run animation</button>
 
 <p style={{ transition: shouldTransition ? "all 0.5s" : "",
             transform: `translateX(${translate}px)`
   }}>
   Lorem ipsum
-</p>
+</p> */}
 
 
 
