@@ -17,7 +17,7 @@
 
 ## Description
 
-This project consists of the development of a billing application for a cinema  
+This project consists of the development of a casino games application
 
 * It was developed with JavaScript, Html, and Css in React Js
 
