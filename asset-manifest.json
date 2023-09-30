@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/react-casino/static/css/main.2798764f.css",
-    "main.js": "/react-casino/static/js/main.4890dd49.js",
+    "main.css": "/react-casino/static/css/main.beaac708.css",
+    "main.js": "/react-casino/static/js/main.ec9f3c52.js",
     "static/js/787.91591c67.chunk.js": "/react-casino/static/js/787.91591c67.chunk.js",
     "static/media/sandia.png": "/react-casino/static/media/sandia.8f0d6c7deeff587ff948.png",
     "static/media/campana.png": "/react-casino/static/media/campana.b4f854c7a35dc10ff6c7.png",
     "static/media/uvas.png": "/react-casino/static/media/uvas.9663f10db9e22cee9cb0.png",
-    "static/media/fondo.jpg": "/react-casino/static/media/fondo.008ab8965684f190200d.jpg",
+    "static/media/fondoVerde.jpg": "/react-casino/static/media/fondoVerde.008ab8965684f190200d.jpg",
     "static/media/fresa.png": "/react-casino/static/media/fresa.3e4850385f6594cb16da.png",
     "static/media/naranja.png": "/react-casino/static/media/naranja.2c2c4e90b497d811fe04.png",
     "static/media/limon.png": "/react-casino/static/media/limon.261e804dbafb2c52e481.png",
@@ -19,7 +19,8 @@
     "static/media/banano.png": "/react-casino/static/media/banano.b763524d6770b9e16150.png",
     "static/media/trebol.png": "/react-casino/static/media/trebol.402e519beecbbc44cddc.png",
     "static/media/logo.png": "/react-casino/static/media/logo.8a9be89a60afe8b63f75.png",
-    "static/media/fondoJuego.jpg": "/react-casino/static/media/fondoJuego.aff9759b999de8b4fd80.jpg",
+    "static/media/fondoAzul.jpg": "/react-casino/static/media/fondoAzul.22c44b5ee1024eaff0a7.jpg",
+    "static/media/fondoRojo.jpg": "/react-casino/static/media/fondoRojo.aff9759b999de8b4fd80.jpg",
     "static/media/manzana.png": "/react-casino/static/media/manzana.a739bec94432b7335c0e.png",
     "static/media/coin.mp3": "/react-casino/static/media/coin.8336e1ecb281c602e9d0.mp3",
     "static/media/triplebar.png": "/react-casino/static/media/triplebar.4a94851b76ac31992f02.png",
@@ -28,12 +29,12 @@
     "static/media/bar.png": "/react-casino/static/media/bar.e2a5b3c2c5fa70192876.png",
     "static/media/triple.mp3": "/react-casino/static/media/triple.f6378118170a1874305c.mp3",
     "index.html": "/react-casino/index.html",
-    "main.2798764f.css.map": "/react-casino/static/css/main.2798764f.css.map",
-    "main.4890dd49.js.map": "/react-casino/static/js/main.4890dd49.js.map",
+    "main.beaac708.css.map": "/react-casino/static/css/main.beaac708.css.map",
+    "main.ec9f3c52.js.map": "/react-casino/static/js/main.ec9f3c52.js.map",
     "787.91591c67.chunk.js.map": "/react-casino/static/js/787.91591c67.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2798764f.css",
-    "static/js/main.4890dd49.js"
+    "static/css/main.beaac708.css",
+    "static/js/main.ec9f3c52.js"
   ]
 }
