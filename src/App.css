@@ -5,8 +5,8 @@
 .App-header {
   width: 100%;
   background-color: #282c34;
-  min-height: 80px;
-  height: 80px;
+  min-height: 70px;
+  height: 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,14 +24,14 @@
   left: auto;
 }
 .App-logo {                                       /***** Logo *****/
-  height: 65px;
+  height: 60px;
   pointer-events: none;
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
 }
 .App-header h1,h2 {								                /***** Titulo header *****/
-  font: 20px 'Century Gothic', Helvetica, Arial, sans-serif;
+  font: 12px 'Century Gothic', Helvetica, Arial, sans-serif;
   letter-spacing: 2px;
-  font-size: calc(20px + 2vmin);
+  font-size: calc(12px + 2vmin);
   color: white;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
   position: static;
@@ -60,7 +60,8 @@
 .App-body {
   background-color: #282c34;
   min-height: 710px;
-  font-size: calc(20px + 2vmin);
+  font-size: calc(12px + 2vmin);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
   background: url("/public/fondo.jpg") no-repeat;
   background-size: cover;
   color: #fff;
@@ -87,9 +88,11 @@
 }
 .iconoMonedaTablero {
   color: gold;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
 }
 .iconoBilleteTablero {
-  color: green;
+  color: #00bb00;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
 }
 input[type='number'] {
   width: 98%;
@@ -102,7 +105,7 @@ input[type='number'] {
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   opacity: 1;
-  height: calc(12px + 5vmin);
+  height: calc(12px + 3vmin);
   cursor: pointer;
   padding: 0 15px 0 15px;
 }

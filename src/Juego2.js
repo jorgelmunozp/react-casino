@@ -48,7 +48,6 @@ const formatterMiles = new Intl.NumberFormat('es-CO', {   //Formato miles para c
 
 
 const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {  
-//function Juego2({credito,setCredito,acumulado,setAcumulado}) {
   const [ganancia,setGanancia] = useState(0);
   let [apuesta,setApuesta] = useState(bet);
 
@@ -122,13 +121,13 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
           <table border="1" className='tablaCredito'>
             <tbody>
               <tr>
-                <td><FaCoins className='iconoMonedaTablero'/></td>
+                <td>crédito <FaCoins className='iconoMonedaTablero'/></td>
                 <td>{formatterMiles.format(credito/10)}</td>
-                <td><RiCoinFill className='iconoMonedaTablero'/></td>
+                <td>apuesta <RiCoinFill className='iconoMonedaTablero'/></td>
                 <td>{<input onChange={(e) => {apuesta=e.target.value; setApuesta(apuesta)}} type={'number'} defaultValue={apuesta} min={10} max={100} step={10} autoComplete='off'/>}</td>
-                <td><GiTwoCoins className='iconoMonedaTablero'/></td>
+                <td>ganancia <GiTwoCoins className='iconoMonedaTablero'/></td>
                 <td>{formatterMiles.format(ganancia)}</td>
-                <td><FaCoins className='iconoMonedaTablero'/></td>
+                <td>acumulado <FaCoins className='iconoMonedaTablero'/></td>
                 <td>{formatterMiles.format(acumulado)}</td>
                 <td><FaMoneyBillAlt className='iconoBilleteTablero'/></td>
                 <td>{formatterPeso.format(credito)}</td>

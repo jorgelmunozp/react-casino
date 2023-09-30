@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import logo from './images/logo.png';
 import './App.css';
 
@@ -6,6 +5,8 @@ import React, { useState, useEffect } from 'react';
 
 import Juego1 from './Juego1';
 import Juego2 from './Juego2';
+
+import { FaCoins,FaMoneyBillAlt } from 'react-icons/fa';
 
 import datos from './datos/datos.json';
 import { Request } from 'node-fetch';
@@ -78,8 +79,8 @@ function App() {
         <div className='App-header-div'>
           <table className='App-tabla-credito'>
             <tr>
-              <td><h1>{formatterPeso.format(credito)}</h1></td>
-              <td><h1>{formatterPeso.format(acumulado)}</h1></td>
+              <td><h1><FaMoneyBillAlt className='iconoBilleteTablero'/>{formatterPeso.format(credito)}</h1></td>
+              <td><h1><FaCoins className='iconoMonedaTablero'/> {formatterPeso.format(acumulado)}</h1></td>
             </tr>
           </table>
           <table className='App-tabla-logo'>
@@ -92,7 +93,6 @@ function App() {
           <nav className='App-nav'>
             <button onClick={() => setJuego(1)} className='App-nav-item'>Videopoker</button>
             <button onClick={() => setJuego(2)} className='App-nav-item'>777</button>
-            <button className='App-nav-item'>Bono</button>
           </nav>
         </div>
       </header>

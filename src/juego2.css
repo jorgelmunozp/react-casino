@@ -5,9 +5,9 @@
   background-size: cover;
 }
 .itemSietes {                 /*Imagenes */
-  width: 170px;
+  width: 120px;
   background-color: transparent;
-  padding: 30px 20px 0px 20px;
+  padding: 10px 0px 0px 0px;
   filter: drop-shadow(4px 4px #fff);
 }
 
@@ -30,12 +30,12 @@
   height:50%;
 }
 .marquee-wrapper .marquee-block{
-  width: 250px;
-  height: 720px;
+  width: 210px;
+  height: 470px;
   overflow: hidden;
   box-sizing: border-box;
   position: relative;
-  margin: 0px 0px 0px 20px;
+  margin: 0px 0px 0px 10px;
   background: darkred;
   background: url("/public/fondoJuego.jpg") no-repeat;
   background-size: cover;
@@ -51,8 +51,8 @@
   -o-animation: marqueeBottom 0.4s linear;
 }
 .marquee-item{
-  width: 240px;
-  height: 240px;
+  width: 200px;
+  height: 160px;
   display: block;
   margin:0 5px 0 5px;
   transition: all .2s ease-out;
