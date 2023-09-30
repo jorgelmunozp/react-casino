@@ -1,4 +1,4 @@
-.itemVideopoker {                 /*Imagenes */
+.itemVideopoker {                       /*Imagenes */
   width: 12vw;
   height: 15vh;
   background-color: #fff;
@@ -40,12 +40,21 @@
 }
 
 
+@media screen and (max-width: 1024px) {
+  .Tabla-juego {                        /* Tabla de las cartas */
+    font-size: 3vw;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .Tabla-juego {                        /* Tabla de las cartas */
     font-size: 4vw;
   }
   .Tabla-juego td{
-    padding: 0 10px 0 10px;
+    padding: 0 8px 0 8px;
+  }
+  .itemVideopoker {                       /*Imagenes */
+    height: 10vh;
   }
 }
 
