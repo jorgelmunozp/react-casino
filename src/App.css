@@ -130,8 +130,18 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 @media screen and (max-width: 600px) {
+  .App-logo {                                       /***** Logo *****/
+    height: 30px;
+  }
+  .App-header h1,h2 {								                /***** Titulo header *****/
+    font-size: calc(6px + 1vmin);
+  }
   .tabla-credito {
     font-size: calc(6px + 1vmin);
+  }
+  .boton-jugar {
+    padding: 12px 60px 12px 60px;
+    font-size: calc(8px + 1vmin);
   }
 }
 

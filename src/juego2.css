@@ -88,6 +88,20 @@
   }
 }
 
+@media screen and (max-width: 400px) {
+  .marquee-wrapper .marquee-block{
+    width: 55px;
+    height: 115px;
+  }
+  .marquee-item{
+    width: 50px;
+    height: 40px;
+  }
+  .itemSietes {                 /*Imagenes */
+    width: 30px;
+  }
+}
+
 
 
 

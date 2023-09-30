@@ -19,8 +19,6 @@
   margin-left: auto;
   margin-right: auto;
   background-color: #174761;
- 
-  
   padding: 10px 10px 10px 10px;
 }
 .container-juego .container{
@@ -42,5 +40,13 @@
 }
 
 
+@media screen and (max-width: 600px) {
+  .Tabla-juego {                        /* Tabla de las cartas */
+    font-size: 4vw;
+  }
+  .Tabla-juego td{
+    padding: 0 10px 0 10px;
+  }
+}
 
 
