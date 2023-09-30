@@ -74,7 +74,7 @@
 
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1024px) {
   .marquee-wrapper .marquee-block{
     width: 105px;
     height: 235px;
@@ -88,7 +88,7 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media (max-width: 570px) {
   .marquee-wrapper .marquee-block{
     width: 55px;
     height: 130px;
