@@ -54,6 +54,7 @@
   padding: 10px 0 10px 0;
   background-color: darkred;
   color: #fff;
+  font-size: calc(8px + 2vmin);
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
 }
 
@@ -133,8 +134,11 @@ input[type=number]::-webkit-outer-spin-button {
   .App-logo {                                       /***** Logo *****/
     height: 30px;
   }
-  .App-header h1,h2 {								                /***** Titulo header *****/
+  .App-header h1, h2, .App-nav-item {								                /***** Titulo header *****/
     font-size: calc(6px + 1vmin);
+  }
+  .App-nav {
+    right: 10px;
   }
   .tabla-credito {
     font-size: calc(6px + 1vmin);
