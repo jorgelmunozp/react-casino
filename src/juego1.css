@@ -46,7 +46,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   .Tabla-juego {                        /* Tabla de las cartas */
     font-size: 4vw;
   }
