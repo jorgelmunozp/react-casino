@@ -96,6 +96,7 @@
   .marquee-item{
     width: 60px;
     height: 60px;
+    margin:0 0 0 0;
   }
   .itemSietes {                 /*Imagenes */
     width: 40px;

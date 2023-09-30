@@ -25,7 +25,7 @@
   overflow:hidden;
   text-align:center;
   background: url("/public/fondoAzul.jpg") ;
-  padding: 20px 20px 20px 20px;
+  padding: 60px 140px 60px 140px;
 }
 
 .Tabla-apuesta {                        /* Tabla de la alerta y el botón */
@@ -54,7 +54,7 @@
     padding: 0 5px 0 5px;
   }
   .container-juego .container{
-    padding: 20px 10px 20px 10px;
+    padding: 25px 10px 25px 10px;
   }
   .itemVideopoker {                       /*cartas */
     width: 13vw;

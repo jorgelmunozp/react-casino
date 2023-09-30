@@ -91,8 +91,8 @@ function App() {
             </tr>
           </table>
           <nav className='App-nav'>
-            <button onClick={() => setJuego(1)} className='App-nav-item'>Videopoker</button>
-            <button onClick={() => setJuego(2)} className='App-nav-item'>777</button>
+            <button onClick={() => setJuego(1)} className='App-nav-item'>póker</button>
+            <button onClick={() => setJuego(2)} className='App-nav-item'>frutas</button>
           </nav>
         </div>
       </header>
