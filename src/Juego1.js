@@ -28,9 +28,9 @@ const formatterMiles = new Intl.NumberFormat('es-CO', {   //Formato miles para c
   minimumFractionDigits: 0
 });
 
+let alerta = "apuesta y buena suerte!";                                          // Alerta para los mensajes del juego
 
 const Juego1 = ({credito,setCredito,acumulado,setAcumulado}) => {  
-  //function Juego1({credito,setCredito,acumulado,setAcumulado}) {
   const [ganancia,setGanancia] = useState(0);
   let [apuesta,setApuesta] = useState(bet);
 
@@ -68,7 +68,7 @@ const Juego1 = ({credito,setCredito,acumulado,setAcumulado}) => {
   return (
     <div className="App">
         <div className='App-body-divTablero'>
-          <table border="1" className='tablaCredito'>
+          <table border="1" className='tabla-credito'>
             <tbody>
             <tr>
                 <td>crédito <FaCoins className='iconoMonedaTablero'/></td>
@@ -86,52 +86,58 @@ const Juego1 = ({credito,setCredito,acumulado,setAcumulado}) => {
           </table> 
         </div>
         <div id='videopoker' className='App-body-divJuego'>
-          <table className='Tabla-juego'>
+          <div className="container-juego">
+            <div className="container">
+              <table className='Tabla-juego'>
+                <tbody>
+                  <tr>
+                    <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[0],'color':carta[0][2],'textAlign':'left'}}>{carta[0][0]}</td>
+                    <td className='espacio'></td>
+                    <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[1],'color':carta[1][2],'textAlign':'left'}}>{carta[1][0]}</td>
+                    <td className='espacio'></td>
+                    <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[2],'color':carta[2][2],'textAlign':'left'}}>{carta[2][0]}</td>
+                    <td className='espacio'></td>
+                    <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[3],'color':carta[3][2],'textAlign':'left'}}>{carta[3][0]}</td>
+                    <td className='espacio'></td>
+                    <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[4],'color':carta[4][2],'textAlign':'left'}}>{carta[4][0]}</td>
+                  </tr>
+                  <tr>
+                    <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[0],'color':carta[0][2]}}>{carta[0][1]}</td>
+                    <td className='espacio'></td>
+                    <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[1],'color':carta[1][2]}}>{carta[1][1]}</td>
+                    <td className='espacio'></td>
+                    <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[2],'color':carta[2][2]}}>{carta[2][1]}</td>
+                    <td className='espacio'></td>
+                    <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[3],'color':carta[3][2]}}>{carta[3][1]}</td>
+                    <td className='espacio'></td>
+                    <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[4],'color':carta[4][2]}}>{carta[4][1]}</td>
+                  </tr>
+                  <tr>
+                    <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[0],'color':carta[0][2],'textAlign':'right'}}>{carta[0][0]}</td>
+                    <td className='espacio'></td>
+                    <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[1],'color':carta[1][2],'textAlign':'right'}}>{carta[1][0]}</td>
+                    <td className='espacio'></td>
+                    <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[2],'color':carta[2][2],'textAlign':'right'}}>{carta[2][0]}</td>
+                    <td className='espacio'></td>
+                    <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[3],'color':carta[3][2],'textAlign':'right'}}>{carta[3][0]}</td>
+                    <td className='espacio'></td>
+                    <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[4],'color':carta[4][2],'textAlign':'right'}}>{carta[4][0]}</td>
+                  </tr>
+                </tbody>
+              </table> 
+            </div>
+          </div>
+          <br/>
+          <table border="1" className='Tabla-boton'>
             <tbody>
               <tr>
-                <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[0],'color':carta[0][2],'textAlign':'left'}}>{carta[0][0]}</td>
+                <td className='tabla-credito'><label className='cuadro-alerta'>{alerta !== "apuesta y buena suerte!"? alerta + "! ganaste X créditos":"apuesta y buena suerte!"}</label></td>
                 <td className='espacio'></td>
-                <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[1],'color':carta[1][2],'textAlign':'left'}}>{carta[1][0]}</td>
-                <td className='espacio'></td>
-                <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[2],'color':carta[2][2],'textAlign':'left'}}>{carta[2][0]}</td>
-                <td className='espacio'></td>
-                <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[3],'color':carta[3][2],'textAlign':'left'}}>{carta[3][0]}</td>
-                <td className='espacio'></td>
-                <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[4],'color':carta[4][2],'textAlign':'left'}}>{carta[4][0]}</td>
-              </tr>
-              <tr>
-                <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[0],'color':carta[0][2]}}>{carta[0][1]}</td>
-                <td className='espacio'></td>
-                <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[1],'color':carta[1][2]}}>{carta[1][1]}</td>
-                <td className='espacio'></td>
-                <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[2],'color':carta[2][2]}}>{carta[2][1]}</td>
-                <td className='espacio'></td>
-                <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[3],'color':carta[3][2]}}>{carta[3][1]}</td>
-                <td className='espacio'></td>
-                <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[4],'color':carta[4][2]}}>{carta[4][1]}</td>
-              </tr>
-              <tr>
-                <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[0],'color':carta[0][2],'textAlign':'right'}}>{carta[0][0]}</td>
-                <td className='espacio'></td>
-                <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[1],'color':carta[1][2],'textAlign':'right'}}>{carta[1][0]}</td>
-                <td className='espacio'></td>
-                <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[2],'color':carta[2][2],'textAlign':'right'}}>{carta[2][0]}</td>
-                <td className='espacio'></td>
-                <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[3],'color':carta[3][2],'textAlign':'right'}}>{carta[3][0]}</td>
-                <td className='espacio'></td>
-                <td className='itemVideopoker' style={{'backgroundColor': colorItemWin[4],'color':carta[4][2],'textAlign':'right'}}>{carta[4][0]}</td>
-              </tr>
+                <td className='tabla-credito'><button type='button' className='boton-jugar' onClick={() => itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,colorItemWin,setColorItemWin,audioMayor,audioCuadruple,audioTriple,audioCoin)}>Jugar</button></td>
+                </tr>
             </tbody>
           </table> 
-          <br/>
-          <button type='button' className='Boton-jugar-videopoker' onClick={() => itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,colorItemWin,setColorItemWin,audioMayor,audioCuadruple,audioTriple,audioCoin)}>JUGAR</button>
         </div>
-
-        {/*     
-          <li><input type="checkbox" value="juego1" checked={checkedjuego1} onChange={(e) => setCheckedjuego1(checkJuego(e.target.checked,e.target.value))} /></li>
-          <li><input type="checkbox" value="juego2" checked={checkedjuego2} onChange={(e) => setCheckedjuego2(checkJuego(e.target.checked,e.target.value))} /></li>
-          <li><input type="checkbox" value="juego3" checked={checkedjuego3} onChange={(e) => setCheckedjuego3(checkJuego(e.target.checked,e.target.value))} /></li>
-        */}
     </div>
   );
 }
@@ -180,7 +186,7 @@ function itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia
       colorItemWin[3]= colorWin;
       colorItemWin[4]= colorWin;
       
-      alert('Mayor');
+      alerta = "Mayor";
 
       ganancia = apuesta * 40;
       credito = credito + ganancia;
@@ -199,7 +205,7 @@ function itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia
       colorItemWin[3]= colorWin;
       colorItemWin[4]= colorWin;
       
-      alert('Flush');
+      alerta = "Flush";
 
       ganancia = apuesta * 5;
       credito = credito + ganancia;
@@ -221,7 +227,7 @@ function gananciaPoker(credito,setCredito,apuesta,ganancia,setGanancia,acumulado
   colorItemWin[item3]= colorWin;
 
   audioCuadruple();
-  alert('Poker');
+  alerta = "Poker";
 
   ganancia = apuesta * 10;
   credito = credito + ganancia;
@@ -239,7 +245,7 @@ function gananciaTerna(credito,setCredito,apuesta,ganancia,setGanancia,acumulado
   colorItemWin[item2]= colorWin;
 
   audioTriple();
-  alert('Terna');
+  alerta = "Terna";
 
   ganancia = apuesta * 3;
   credito = credito + ganancia;

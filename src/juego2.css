@@ -1,7 +1,7 @@
 .tablaJuego {
   background-color: #a00;
   border: 1px solid #000;
-  background: url("/public/fondoJuego.jpg") no-repeat;
+  background: url("/public/fondoRojo.jpg") no-repeat;
   background-size: cover;
 }
 .itemSietes {                 /*Imagenes */
@@ -13,8 +13,7 @@
 
 
 
-
-.marquee-wrapper{
+.marquee-wrapper{                     /* Marco de las cartas */
   display: inline-flex;
   margin-left: auto;
   margin-right: auto;
@@ -24,7 +23,6 @@
 .marquee-wrapper .container{
   overflow:hidden;
   text-align:center;
-
 }
 .marquee-inner span{
   height:50%;
@@ -37,7 +35,7 @@
   position: relative;
   margin: 0px 0px 0px 10px;
   background: darkred;
-  background: url("/public/fondoJuego.jpg") no-repeat;
+  background: url("/public/fondoRojo.jpg") no-repeat;
   background-size: cover;
 }
 .marquee-inner{
@@ -76,20 +74,21 @@
 
 
 
-
-
-
-
-.Boton-jugar-sietes {
-  color: #fff;
-  background-color: #500;
-  padding: 15px 0 15px 0;
-  letter-spacing: 10px;
-  font-size: calc(10px + 2vmin);
-  font-weight: bolder;
-  width: 50vw;
-  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
+@media screen and (max-width: 600px) {
+  .marquee-wrapper .marquee-block{
+    width: 105px;
+    height: 235px;
+  }
+  .marquee-item{
+    width: 100px;
+    height: 80px;
+  }
+  .itemSietes {                 /*Imagenes */
+    width: 60px;
+  }
 }
+
+
 
 
 

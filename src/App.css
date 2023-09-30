@@ -29,9 +29,9 @@
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
 }
 .App-header h1,h2 {								                /***** Titulo header *****/
-  font: 12px 'Century Gothic', Helvetica, Arial, sans-serif;
+  font: 10px 'Century Gothic', Helvetica, Arial, sans-serif;
   letter-spacing: 2px;
-  font-size: calc(12px + 2vmin);
+  font-size: calc(10px + 2vmin);
   color: white;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
   position: static;
@@ -60,9 +60,9 @@
 .App-body {
   background-color: #282c34;
   min-height: 710px;
-  font-size: calc(12px + 2vmin);
+  font-size: calc(10px + 2vmin);
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
-  background: url("/public/fondo.jpg") no-repeat;
+  background: url("/public/fondoVerde.jpg") no-repeat;
   background-size: cover;
   color: #fff;
 }
@@ -81,10 +81,11 @@
 }
 
 /**** Tabla crédito, apuesta, ganancia y acumulado **************/
-.tablaCredito {
+.tabla-credito {
   background-color: #282c34;
   width: 100%;
   text-align: center;
+  font-size: calc(10px + 2vmin);
 }
 .iconoMonedaTablero {
   color: gold;
@@ -117,6 +118,21 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: 0px;
   cursor: pointer;
 }
+.boton-jugar {
+  color: #fff;
+  background-color: darkred;
+  padding: 12px 120px 12px 120px;
+  font-size: calc(10px + 2vmin);
+  width: 100%;
+  cursor: pointer;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
+}
 
+
+@media screen and (max-width: 600px) {
+  .tabla-credito {
+    font-size: calc(6px + 1vmin);
+  }
+}
 
 

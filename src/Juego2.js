@@ -46,6 +46,7 @@ const formatterMiles = new Intl.NumberFormat('es-CO', {   //Formato miles para c
   minimumFractionDigits: 0
 });
 
+let alerta = "apuesta y buena suerte!";                  // Alerta para los mensajes del juego
 
 const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {  
   const [ganancia,setGanancia] = useState(0);
@@ -105,20 +106,8 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
 
   return (
       <div className="App">
-
-
-{/* <button onClick={handleClick}>Run animation</button>
-
-<p style={{ transition: shouldTransition ? "all 0.5s" : "",
-            transform: `translateX(${translate}px)`
-  }}>
-  Lorem ipsum
-</p> */}
-
-
-
         <div className='App-body-divTablero'>
-          <table border="1" className='tablaCredito'>
+          <table border="1" className='tabla-credito'>
             <tbody>
               <tr>
                 <td>crédito <FaCoins className='iconoMonedaTablero'/></td>
@@ -218,9 +207,16 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
               </div>
             </div> 
           </div>
-
-          <button type='button' className='Boton-jugar-sietes' onClick={() => itemAleatorio(items,credito,setCredito,item,setItem,apuesta,ganancia,setGanancia,acumulado,setAcumulado,itemsLista[0],colorItemWin,setColorItemWin,audioMayor,audioCuadruple,audioTriple,audioCoin,startGiroItems,setStartGiroItems,cantidadGiroItems,setCantidadGiroItems)}>JUGAR</button>        
-          
+          <br/>
+          <table border="1" className='Tabla-boton'>
+            <tbody>
+              <tr>
+                <td className='tabla-credito'><label className='cuadro-alerta'>{alerta !== "apuesta y buena suerte!"? alerta + "! ganaste X créditos":"apuesta y buena suerte!"}</label></td>
+                <td className='espacio'></td>
+                <td className='tabla-credito'><button type='button' className='boton-jugar' onClick={() => itemAleatorio(items,credito,setCredito,item,setItem,apuesta,ganancia,setGanancia,acumulado,setAcumulado,itemsLista[0],colorItemWin,setColorItemWin,audioMayor,audioCuadruple,audioTriple,audioCoin,startGiroItems,setStartGiroItems,cantidadGiroItems,setCantidadGiroItems)}>Jugar</button></td>
+                </tr>
+            </tbody>
+          </table> 
         </div>
    </div>
   );
@@ -388,12 +384,12 @@ function gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia
   if(item[fil1][col1] === siete){
     ganancia = (apuesta*10) * 10;
     audioMayor();
-    alert('77777');
+    alerta = "77777";
   }else{
     ganancia = (apuesta*10) * 5;
 
     audioMayor();
-    alert('XXXXX');
+    alerta = "5 en línea";
   }
   credito = credito + ganancia;
   acumulado = acumulado + (ganancia/100);
@@ -412,10 +408,10 @@ function gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGananci
 
   if(item[fil1][col1] === siete){
     ganancia = (apuesta*10) * 8;
-    alert('7777');
+    alerta = "7777";
   }else{
     ganancia = (apuesta*10) * 4;
-    alert('XXXX');
+    alerta = "4 en línea";
   }
    credito = credito + ganancia;
    acumulado = acumulado + (ganancia/100);
@@ -433,10 +429,10 @@ function gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,
 
   if(item[fil1][col1] === siete){
       ganancia = (apuesta*10) * 6;
-      alert('777');
+      alerta = "777";
   }else{
       ganancia = (apuesta*10) * 3;      
-      alert('XXX');
+      alerta = "3 en línea";
   }
   credito = credito + ganancia;
   acumulado = acumulado + (ganancia/100);
