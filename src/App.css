@@ -147,6 +147,14 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 12px 60px 12px 60px;
     font-size: calc(8px + 1vmin);
   }
+  input[type='number'] {
+    width: 98%;
+  }
+  input[type=number]::-webkit-inner-spin-button,  
+  input[type=number]::-webkit-outer-spin-button { 
+    height: calc(8px + 2vmin);
+    padding: 0 5px 0 5px;
+  }
 }
 
 

@@ -208,7 +208,7 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
             </div> 
           </div>
           <br/>
-          <table border="1" className='Tabla-boton'>
+          <table border="1" className='Tabla-apuesta'>
             <tbody>
               <tr>
                 <td className='tabla-credito'><label className='cuadro-alerta'>{alerta !== "apuesta y buena suerte!"? alerta + "! ganaste X créditos":"apuesta y buena suerte!"}</label></td>

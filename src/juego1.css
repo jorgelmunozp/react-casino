@@ -1,4 +1,4 @@
-.itemVideopoker {                       /*Imagenes */
+.itemVideopoker {                       /*cartas */
   width: 12vw;
   height: 15vh;
   background-color: #fff;
@@ -28,7 +28,7 @@
   padding: 20px 20px 20px 20px;
 }
 
-.Tabla-boton {                        /* Tabla de la alerta y el botón */
+.Tabla-apuesta {                        /* Tabla de la alerta y el botón */
   font-size: 6vw;
   border-collapse: collapse;
 }
@@ -46,15 +46,19 @@
   }
 }
 
-@media (max-width: 640px) {
+@media screen and (max-width: 640px) {
   .Tabla-juego {                        /* Tabla de las cartas */
     font-size: 4vw;
   }
   .Tabla-juego td{
-    padding: 0 8px 0 8px;
+    padding: 0 5px 0 5px;
   }
-  .itemVideopoker {                       /*Imagenes */
-    height: 7vh;
+  .container-juego .container{
+    padding: 20px 10px 20px 10px;
+  }
+  .itemVideopoker {                       /*cartas */
+    width: 13vw;
+    height: 6vh;
   }
 }
 
