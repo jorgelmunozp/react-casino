@@ -50,7 +50,7 @@
   -o-animation: marqueeBottom 0.4s linear;
 }
 .marquee-item{
-  width: 240px;
+  width: 250px;
   height: 160px;
   display: block;
   margin:0 3.5px 0 3.5px;
@@ -81,7 +81,7 @@
     height: 280px;
   }
   .marquee-item{
-    width: 120px;
+    width: 140px;
     height: 90px;
   }
   .itemSietes {                 /*Imagenes */
@@ -91,13 +91,12 @@
 
 @media screen and (max-width: 640px) {
   .marquee-wrapper .marquee-block{
-    /* width: 65px; */
-    height: 185px;
+    height: 210px;
     margin: 0px 0px 0px 5px;
   }
   .marquee-item{
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     margin:0 0 0 0;
   }
   .itemSietes {                 /*Imagenes */
