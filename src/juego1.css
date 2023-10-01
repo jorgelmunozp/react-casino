@@ -46,7 +46,7 @@
 
 @media screen and (max-width: 1400px) {
   .Tabla-juego {                        /* Tabla de las cartas */
-    font-size: 4vw;
+    font-size: 6vw;
   }
   .Tabla-juego td{
     padding: 0 10px 0 10px;
