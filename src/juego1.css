@@ -55,7 +55,7 @@
     padding: 25px 20px 25px 20px;
   }
   .itemVideopoker {                       /*cartas */
-    width: 18vw;
+    width: 21vw;
     height: 17vh;
   }
 }
@@ -68,7 +68,7 @@
     padding: 0 1px 0 1px;
   }
   .container-juego .container{
-    padding: 25px 5px 25px 5px;
+    padding: 25px 2px 25px 2px;
   }
   .itemVideopoker {                       /*cartas */
     width: 19vw;

@@ -50,7 +50,7 @@
   -o-animation: marqueeBottom 0.4s linear;
 }
 .marquee-item{
-  width: 250px;
+  width: 260px;
   height: 160px;
   display: block;
   margin:0 3.5px 0 3.5px;
@@ -75,7 +75,7 @@
 
 
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1200px) {
   .marquee-wrapper .marquee-block{
     width: 160px;
     height: 280px;
