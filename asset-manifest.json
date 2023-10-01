@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-casino/static/css/main.30c23e49.css",
+    "main.css": "/react-casino/static/css/main.a9c5a54f.css",
     "main.js": "/react-casino/static/js/main.41d2983d.js",
     "static/js/787.91591c67.chunk.js": "/react-casino/static/js/787.91591c67.chunk.js",
     "static/media/sandia.png": "/react-casino/static/media/sandia.8f0d6c7deeff587ff948.png",
@@ -29,12 +29,12 @@
     "static/media/bar.png": "/react-casino/static/media/bar.e2a5b3c2c5fa70192876.png",
     "static/media/triple.mp3": "/react-casino/static/media/triple.f6378118170a1874305c.mp3",
     "index.html": "/react-casino/index.html",
-    "main.30c23e49.css.map": "/react-casino/static/css/main.30c23e49.css.map",
+    "main.a9c5a54f.css.map": "/react-casino/static/css/main.a9c5a54f.css.map",
     "main.41d2983d.js.map": "/react-casino/static/js/main.41d2983d.js.map",
     "787.91591c67.chunk.js.map": "/react-casino/static/js/787.91591c67.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.30c23e49.css",
+    "static/css/main.a9c5a54f.css",
     "static/js/main.41d2983d.js"
   ]
 }
