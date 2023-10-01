@@ -5,7 +5,7 @@
   background-size: cover;
 }
 .itemSietes {                 /*Imagenes */
-  width: 160px;
+  width: 120px;
   background-color: transparent;
   padding: 10px 0px 0px 0px;
   filter: drop-shadow(4px 4px #fff);
@@ -28,8 +28,8 @@
   height:50%;
 }
 .marquee-wrapper .marquee-block{
-  width: 315px;
-  height: 540px;
+  width: 210px;
+  height: 470px;
   overflow: hidden;
   box-sizing: border-box;
   position: relative;
@@ -49,8 +49,8 @@
   -o-animation: marqueeBottom 0.4s linear;
 }
 .marquee-item{
-  width: 300px;
-  height: 180px;
+  width: 200px;
+  height: 160px;
   display: block;
   margin:0 3.5px 0 3.5px;
   transition: all .2s ease-out;
