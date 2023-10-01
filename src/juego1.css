@@ -56,19 +56,19 @@
   }
   .itemVideopoker {                       /*cartas */
     width: 18vw;
-    height: 12vh;
+    height: 14vh;
   }
 }
 
 @media screen and (max-width: 640px) {
   .Tabla-juego {                        /* Tabla de las cartas */
-    font-size: 5vw;
+    font-size: 6vw;
   }
   .Tabla-juego td {
     padding: 0 2px 0 2px;
   }
   .container-juego .container{
-    padding: 25px 20px 25px 20px;
+    padding: 25px 10px 25px 10px;
   }
   .itemVideopoker {                       /*cartas */
     width: 17vw;
