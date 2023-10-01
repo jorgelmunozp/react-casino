@@ -81,7 +81,7 @@
     height: 280px;
   }
   .marquee-item{
-    width: 160px;
+    width: fit-content;
     height: 90px;
   }
   .itemSietes {                 /*Imagenes */
@@ -95,7 +95,7 @@
     margin: 0px 0px 0px 5px;
   }
   .marquee-item{
-    width: 65px;
+    width: fit-content;
     height: 70px;
     margin:0 0 0 0;
   }
