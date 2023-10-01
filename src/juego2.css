@@ -77,11 +77,11 @@
 
 @media screen and (max-width: 1200px) {
   .marquee-wrapper .marquee-block{
-    width: 160px;
+    width: 210px;
     height: 280px;
   }
   .marquee-item{
-    width: fit-content;
+    width: 160px;
     height: 90px;
   }
   .itemSietes {                 /*Imagenes */
@@ -95,7 +95,7 @@
     margin: 0px 0px 0px 5px;
   }
   .marquee-item{
-    width: fit-content;
+    width: 65px;
     height: 70px;
     margin:0 0 0 0;
   }
