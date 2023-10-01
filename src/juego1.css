@@ -56,7 +56,7 @@
   }
   .itemVideopoker {                       /*cartas */
     width: 18vw;
-    height: 16vh;
+    height: 17vh;
   }
 }
 
@@ -65,14 +65,14 @@
     font-size: 6vw;
   }
   .Tabla-juego td {
-    padding: 0 2px 0 2px;
+    padding: 0 1px 0 1px;
   }
   .container-juego .container{
-    padding: 25px 10px 25px 10px;
+    padding: 25px 5px 25px 5px;
   }
   .itemVideopoker {                       /*cartas */
-    width: 17vw;
-    height: 6vh;
+    width: 19vw;
+    height: 7vh;
   }
 }
 
