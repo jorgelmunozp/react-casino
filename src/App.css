@@ -46,8 +46,8 @@
   position: absolute;
   display: inline-flex;
   list-style-type: none;
-  top: 20px;
-  right: 50px;
+  top: 10px;
+  right: 30px;
 }
 .App-nav-item {
   width: calc(55px + 5vw);
@@ -129,6 +129,23 @@ input[type=number]::-webkit-outer-spin-button {
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
 }
 
+@media screen and (max-width: 1400px) {
+  .App-header {
+    min-height: 50px;
+    height: 50px;
+  }
+  .App-logo {                                       /***** Logo *****/
+    height: 30px;
+  }
+  .App-nav {
+    right: 10px;
+  }
+  .App-nav-item {
+    width: calc(55px + 3vw);
+    padding: 6px 0 6px 0;
+    font-size: calc(6px + 2vmin);
+  }
+}
 
 @media screen and (max-width: 600px) {
   .App-logo {                                       /***** Logo *****/
@@ -140,8 +157,12 @@ input[type=number]::-webkit-outer-spin-button {
   .App-nav {
     right: 10px;
   }
+  .App-nav-item {
+    width: calc(40px + 2vw);
+    padding: 4px 0 4px 0;
+  }
   .tabla-credito {
-    font-size: calc(6px + 1vmin);
+    font-size: calc(6px + 2vmin);
   }
   .boton-jugar {
     padding: 12px 50px 12px 50px;

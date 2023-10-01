@@ -14,7 +14,7 @@
   border-collapse: collapse;
 }
 .Tabla-juego td{
-  padding: 0 12px 0 12px;
+  padding: 5px 12px 5px 12px;
 }
 .container-juego{                     /* Marco de las cartas */
   display: inline-flex;
@@ -27,9 +27,11 @@
   overflow:hidden;
   text-align:center;
   background: url("/public/fondoAzul.jpg") ;
-  padding: 60px 40px 60px 40px;
+  padding: 55px 40px 55px 40px;
 }
-
+.tabla-credito td{
+  padding: 5px 0 5px 0;
+}
 .Tabla-apuesta {                        /* Tabla de la alerta y el botón */
   font-size: 6vw;
   border-collapse: collapse;
@@ -50,26 +52,26 @@
     padding: 0 10px 0 10px;
   }
   .container-juego .container{
-    padding: 25px 120px 25px 120px;
+    padding: 25px 20px 25px 20px;
   }
   .itemVideopoker {                       /*cartas */
-    width: 13vw;
+    width: 18vw;
     height: 12vh;
   }
 }
 
 @media screen and (max-width: 640px) {
   .Tabla-juego {                        /* Tabla de las cartas */
-    font-size: 4vw;
+    font-size: 5vw;
   }
-  .Tabla-juego td{
-    padding: 0 5px 0 5px;
+  .Tabla-juego td {
+    padding: 0 2px 0 2px;
   }
   .container-juego .container{
-    padding: 25px 10px 25px 10px;
+    padding: 25px 20px 25px 20px;
   }
   .itemVideopoker {                       /*cartas */
-    width: 13vw;
+    width: 17vw;
     height: 6vh;
   }
 }
