@@ -135,9 +135,8 @@ const Juego1 = ({credito,setCredito,acumulado,setAcumulado}) => {
           <table border="1" className='Tabla-apuesta'>
             <tbody>
               <tr>
-                <td className='tabla-credito'><label className='cuadro-alerta'>{alerta !== "apuesta y buena suerte!"? alerta + "! ganaste X créditos":"apuesta y buena suerte!"}</label></td>
+                <td className='tabla-credito'><label className='cuadro-alerta'>{alerta}</label></td>
                 <td className='espacio'></td>
-                {/* <td className='tabla-credito'>{buttonDisabled?<button type='button' className='boton-jugar' disabled>Jugar</button>:<button type='button' className='boton-jugar' onClick={() => itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,colorItemWin,setColorItemWin,audioMayor,audioCuadruple,audioTriple,audioCoin)}>Jugar</button>}</td> */}
                 <td className='tabla-credito'><button type='button' className='boton-jugar' onClick={() => itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,colorItemWin,setColorItemWin,audioMayor,audioCuadruple,audioTriple,audioCoin)} disabled={disabled}>Jugar</button></td>
                 </tr>
             </tbody>
@@ -209,12 +208,12 @@ function itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia
       colorItemWin[4]= colorWin;
 
       audioCuadruple();
-      
+
       ganancia = apuesta * 40;
       credito = credito + ganancia;
       acumulado = acumulado + (ganancia/10);
       
-      setAlerta("Royal Flush")
+      setAlerta("Royal Flush! ganáste " + ganancia + " créditos")
       setColorItemWin(colorItemWin);
       setAcumulado(acumulado);
       setGanancia(ganancia);
@@ -239,7 +238,7 @@ function itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia
       credito = credito + ganancia;
       acumulado = acumulado + (ganancia/10);
  
-      setAlerta("Flush")
+      setAlerta("Flush! ganáste " + ganancia + " créditos")
       setColorItemWin(colorItemWin);
       setAcumulado(acumulado);
       setGanancia(ganancia);
@@ -266,7 +265,7 @@ function gananciaPoker(credito,setCredito,apuesta,ganancia,setGanancia,acumulado
   credito = credito + ganancia;
   acumulado = acumulado + (ganancia/10);
  
-  setAlerta("Poker")
+  setAlerta("Poker! ganáste " + ganancia + " créditos")
   setColorItemWin(colorItemWin);
   setAcumulado(acumulado);
   setGanancia(ganancia);
@@ -289,7 +288,7 @@ function gananciaTerna(credito,setCredito,apuesta,ganancia,setGanancia,acumulado
   credito = credito + ganancia;
   acumulado = acumulado + (ganancia/10);
 
-  setAlerta("Terna")
+  setAlerta("Terna! ganáste " + ganancia + " créditos")
   setColorItemWin(colorItemWin);
   setAcumulado(acumulado);
   setGanancia(ganancia);
