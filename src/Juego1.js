@@ -11,7 +11,9 @@ import { GiTwoCoins } from 'react-icons/gi';
 import { RiCoinFill } from 'react-icons/ri';
 
 const bet = 10;
-const colorWin = 'rgb(255,255,255,0.9)';
+const colorWin = 'rgb(255,255,255,0.7)';
+const alertaInicial = "apuesta y buena suerte!";                                          // Alerta para los mensajes del juego
+const timeout = 2000;
 
 const cartasLista =[[['A','♠','black'],['2','♠','black'],['3','♠','black'],['4','♠','black'],['5','♠','black'],['6','♠','black'],['7','♠','black'],['8','♠','black'],['9','♠','black'],['10','♠','black'],['J','♠','black'],['Q','♠','black'],['K','♠','black']],
                     [['A','♥','red'],['2','♥','red'],['3','♥','red'],['4','♥','red'],['5','♥','red'],['6','♥','red'],['7','♥','red'],['8','♥','red'],['9','♥','red'],['10','♥','red'],['J','♥','red'],['Q','♥','red'],['K','♥','red']],
@@ -28,7 +30,6 @@ const formatterMiles = new Intl.NumberFormat('es-CO', {   //Formato miles para c
   minimumFractionDigits: 0
 });
 
-let alerta = "apuesta y buena suerte!";                                          // Alerta para los mensajes del juego
 
 const Juego1 = ({credito,setCredito,acumulado,setAcumulado}) => {  
   const [ganancia,setGanancia] = useState(0);
@@ -47,6 +48,8 @@ const Juego1 = ({credito,setCredito,acumulado,setAcumulado}) => {
                                          
 
   const [colorItemWin,setColorItemWin] = useState([['transparent','transparent','transparent','transparent','transparent']]);
+  const [alerta, setAlerta] = useState(alertaInicial);                      // Disabled button
+  const [disabled, setDisabled] = useState(false);                      // Disabled button 
 
   let sonidoMayor = new Audio(mp3Mayor);
   let sonidoTriple = new Audio(mp3Triple);
@@ -134,7 +137,8 @@ const Juego1 = ({credito,setCredito,acumulado,setAcumulado}) => {
               <tr>
                 <td className='tabla-credito'><label className='cuadro-alerta'>{alerta !== "apuesta y buena suerte!"? alerta + "! ganaste X créditos":"apuesta y buena suerte!"}</label></td>
                 <td className='espacio'></td>
-                <td className='tabla-credito'><button type='button' className='boton-jugar' onClick={() => itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,colorItemWin,setColorItemWin,audioMayor,audioCuadruple,audioTriple,audioCoin)}>Jugar</button></td>
+                {/* <td className='tabla-credito'>{buttonDisabled?<button type='button' className='boton-jugar' disabled>Jugar</button>:<button type='button' className='boton-jugar' onClick={() => itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,colorItemWin,setColorItemWin,audioMayor,audioCuadruple,audioTriple,audioCoin)}>Jugar</button>}</td> */}
+                <td className='tabla-credito'><button type='button' className='boton-jugar' onClick={() => itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,colorItemWin,setColorItemWin,audioMayor,audioCuadruple,audioTriple,audioCoin)} disabled={disabled}>Jugar</button></td>
                 </tr>
             </tbody>
           </table> 
@@ -144,7 +148,7 @@ const Juego1 = ({credito,setCredito,acumulado,setAcumulado}) => {
 }
 
 
-function itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,colorItemWin,setColorItemWin,audioMayor,audioCuadruple,audioTriple,audioCoin,item0,item1,item2,item3,item4) {
+function itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,colorItemWin,setColorItemWin,audioMayor,audioCuadruple,audioTriple,audioCoin,item0,item1,item2,item3,item4) {
   if(credito > 0 && credito >= (apuesta*10)){
     credito = credito - (apuesta*10);
     setCredito(credito);
@@ -152,32 +156,44 @@ function itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia
 
     for(let i=0;i<5;i++){                   //Llena todas las posiciones con items de la lista con posiciones al azar
         carta[i] = cartas[Math.floor(Math.random()*cartasLista.length)][Math.floor(Math.random()*cartasLista[0].length)];
-        colorItemWin[i]= '#fff';   //Items con fondo transparente
+        colorItemWin[i]= '#fff';            //Items con fondo transparente
     }
-    console.log("cartas: ",[carta[0],carta[1],carta[2],carta[3],carta[4]])
     setCarta([carta[0],carta[1],carta[2],carta[3],carta[4]]);
 
     //------------------- Poker (4 cartas iguales) -------------------//
     if(carta[0][0] === carta[1][0] && carta[1][0] === carta[2][0] && carta[2][0] === carta[3][0]){
-      gananciaPoker(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,colorWin,colorItemWin,setColorItemWin,audioCuadruple,0,1,2,3);
+            gananciaPoker(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,colorWin,colorItemWin,setColorItemWin,audioCuadruple,0,1,2,3);
     }
     else if(carta[0][0] === carta[1][0] && carta[1][0] === carta[2][0] && carta[2][0] === carta[4][0]){
-      gananciaPoker(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,colorWin,colorItemWin,setColorItemWin,audioCuadruple,0,1,2,4);
+            gananciaPoker(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,colorWin,colorItemWin,setColorItemWin,audioCuadruple,0,1,2,4);
     }
     else if(carta[0][0]=== carta[1][0] && carta[1][0] === carta[3][0] && carta[3][0] === carta[4][0]){
-      gananciaPoker(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,colorWin,colorItemWin,setColorItemWin,audioCuadruple,0,1,3,4);
+            gananciaPoker(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,colorWin,colorItemWin,setColorItemWin,audioCuadruple,0,1,3,4);
     }
     else if(carta[0][0] === carta[2][0] && carta[2][0]=== carta[3][0] && carta[3][0] === carta[4][0]){
-      gananciaPoker(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,colorWin,colorItemWin,setColorItemWin,audioCuadruple,0,2,3,4);
+            gananciaPoker(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,colorWin,colorItemWin,setColorItemWin,audioCuadruple,0,2,3,4);
     }
     else if(carta[1][0] === carta[2][0] && carta[2][0] === carta[3][0] && carta[3][0] === carta[4][0]){
-      gananciaPoker(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,colorWin,colorItemWin,setColorItemWin,audioCuadruple,1,2,3,4);
+            gananciaPoker(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,colorWin,colorItemWin,setColorItemWin,audioCuadruple,1,2,3,4);
     }
     //------------------- Ternas (3 cartas iguales)  -------------------//
-    else if((carta[0][0] === carta[1][0] && carta[1][0] === carta[2][0])||
-            (carta[0][0] === carta[1][0] && carta[1][0] === carta[3][0])||
-            (carta[0][0] === carta[1][0] && carta[1][0] === carta[4][0])){
-              gananciaTerna(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,colorWin,colorItemWin,setColorItemWin,audioTriple,0,1,4)
+    else if(carta[0][0] === carta[1][0] && carta[1][0] === carta[2][0]){
+            gananciaTerna(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,colorWin,colorItemWin,setColorItemWin,audioTriple,0,1,2)
+    }
+    else if(carta[0][0] === carta[1][0] && carta[1][0] === carta[3][0]){
+            gananciaTerna(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,colorWin,colorItemWin,setColorItemWin,audioTriple,0,1,3)
+    }
+    else if(carta[0][0] === carta[1][0] && carta[1][0] === carta[4][0]){
+            gananciaTerna(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,colorWin,colorItemWin,setColorItemWin,audioTriple,0,1,4)
+    }
+    else if(carta[1][0] === carta[2][0] && carta[2][0] === carta[3][0]){
+            gananciaTerna(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,colorWin,colorItemWin,setColorItemWin,audioTriple,1,2,3)
+    }
+    else if(carta[1][0] === carta[2][0] && carta[2][0] === carta[4][0]){
+            gananciaTerna(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,colorWin,colorItemWin,setColorItemWin,audioTriple,1,2,4)
+    }
+    else if(carta[2][0] === carta[3][0] && carta[3][0] === carta[4][0]){
+            gananciaTerna(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,colorWin,colorItemWin,setColorItemWin,audioTriple,2,3,4)
     }
     //------------------- Royal Flush (10JQKA)  -------------------//
     if(((carta[0][0] === '10' || carta[1][0] === '10' || carta[2][0] === '10' || carta[3][0] === '10' || carta[4][0] === '10' ) && 
@@ -191,17 +207,23 @@ function itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia
       colorItemWin[2]= colorWin;
       colorItemWin[3]= colorWin;
       colorItemWin[4]= colorWin;
-      
-      alerta = "Royal Flush";
 
+      audioCuadruple();
+      
       ganancia = apuesta * 40;
       credito = credito + ganancia;
       acumulado = acumulado + (ganancia/10);
       
+      setAlerta("Royal Flush")
       setColorItemWin(colorItemWin);
       setAcumulado(acumulado);
       setGanancia(ganancia);
       setCredito(credito);
+      setDisabled(true)
+      setTimeout(() => {
+        setDisabled(false)
+        setAlerta(alertaInicial)
+      }, timeout);
     }
     //------------------- Flush (Palo igual)  -------------------//
     if(carta[0][1] === carta[1][1] && carta[1][1] === carta[2][1] && carta[2][1] === carta[3][1] && carta[3][1] === carta[4][1]){
@@ -210,57 +232,73 @@ function itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia
       colorItemWin[2]= colorWin;
       colorItemWin[3]= colorWin;
       colorItemWin[4]= colorWin;
-      
-      alerta = "Flush";
+
+      audioCuadruple();
 
       ganancia = apuesta * 5;
       credito = credito + ganancia;
       acumulado = acumulado + (ganancia/10);
-      
+ 
+      setAlerta("Flush")
       setColorItemWin(colorItemWin);
       setAcumulado(acumulado);
       setGanancia(ganancia);
       setCredito(credito);
+      setDisabled(true)
+      setTimeout(() => {
+        setDisabled(false)
+        setAlerta(alertaInicial)
+      }, timeout);
     }
   }
 }
 // **************************** GANANCIAS ****************************// 
 //------------------- Poker (4 cartas iguales) -------------------//
-function gananciaPoker(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,colorWin,colorItemWin,setColorItemWin,audioCuadruple,item0,item1,item2,item3){
+function gananciaPoker(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,colorWin,colorItemWin,setColorItemWin,audioCuadruple,item0,item1,item2,item3){
   colorItemWin[item0]= colorWin;
   colorItemWin[item1]= colorWin;
   colorItemWin[item2]= colorWin;
   colorItemWin[item3]= colorWin;
 
   audioCuadruple();
-  alerta = "Poker";
 
   ganancia = apuesta * 10;
   credito = credito + ganancia;
   acumulado = acumulado + (ganancia/10);
  
+  setAlerta("Poker")
   setColorItemWin(colorItemWin);
   setAcumulado(acumulado);
   setGanancia(ganancia);
   setCredito(credito);
+  setDisabled(true)
+  setTimeout(() => {
+    setDisabled(false)
+    setAlerta(alertaInicial)
+  }, timeout);
 };
 //------------------- Ternas (3 cartas iguales)  -------------------//
-function gananciaTerna(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,colorWin,colorItemWin,setColorItemWin,audioTriple,item0,item1,item2){
+function gananciaTerna(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,colorWin,colorItemWin,setColorItemWin,audioTriple,item0,item1,item2){
   colorItemWin[item0]= colorWin;
   colorItemWin[item1]= colorWin;
   colorItemWin[item2]= colorWin;
 
   audioTriple();
-  alerta = "Terna";
 
   ganancia = apuesta * 3;
   credito = credito + ganancia;
   acumulado = acumulado + (ganancia/10);
 
+  setAlerta("Terna")
   setColorItemWin(colorItemWin);
   setAcumulado(acumulado);
   setGanancia(ganancia);
   setCredito(credito);
+  setDisabled(true)
+  setTimeout(() => {
+    setDisabled(false)
+    setAlerta(alertaInicial)
+  }, timeout);
 };
 
 
