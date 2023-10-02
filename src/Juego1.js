@@ -141,6 +141,50 @@ const Juego1 = ({credito,setCredito,acumulado,setAcumulado}) => {
                 </tr>
             </tbody>
           </table> 
+          <table border="1" className='Tabla-premios'>
+            <tbody>
+              <tr>
+                <td className='tabla-premios'>{'Terna de 2 a 10'}</td>
+                <td className='tabla-premios'>{apuesta * 3}</td>
+              </tr>
+              <tr>
+                <td className='tabla-premios'>{'Terna de J,K,K,A'}</td>
+                <td className='tabla-premios'>{apuesta * 6}</td>
+              </tr>
+              <tr>
+               <td className='tabla-premios'>{'Poker de 2 a 10'}</td>
+               <td className='tabla-premios'>{apuesta * 10}</td>
+              </tr>
+              <tr>
+                <td className='tabla-premios'>{'Poker de J,K,K'}</td>
+                <td className='tabla-premios'>{apuesta * 20}</td>
+              </tr>
+              <tr>
+                <td className='tabla-premios'>{'Poker de As'}</td>
+                <td className='tabla-premios'>{apuesta * 30}</td>
+              </tr>
+              <tr>
+                <td className='tabla-premios'>{'Straigth'}</td>
+                <td className='tabla-premios'>{apuesta * 4}</td>
+              </tr>
+              <tr>
+                <td className='tabla-premios'>{'Flush'}</td>
+                <td className='tabla-premios'>{apuesta * 6}</td>
+              </tr>
+              <tr>
+                <td className='tabla-premios'>{'Straigth Flush'}</td>
+                <td className='tabla-premios'>{apuesta * 8}</td>
+              </tr>
+              <tr>
+                <td className='tabla-premios'>{'Full House'}</td>
+                <td className='tabla-premios'>{apuesta * 10}</td>
+              </tr>
+              <tr>
+                <td className='tabla-premios'>{'Royal Flush'}</td>
+                <td className='tabla-premios'>{apuesta * 50}</td>
+              </tr>
+            </tbody>
+          </table> 
         </div>
     </div>
   );
@@ -235,7 +279,7 @@ function itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia
 
       audioCuadruple();
 
-      ganancia = apuesta * 5;
+      ganancia = apuesta * 6;
       credito = credito + ganancia;
       acumulado = acumulado + (ganancia/10);
  

@@ -32,13 +32,19 @@ const colorWin = 'rgb(255,215,0,1)';
 const alertaInicial = "apuesta y buena suerte!";                       // Alerta para los mensajes del juego
 const timeout = 2000;                                                  // Tiempo de reactivación de los controles después de una ganancia
 
- const itemsLista = [<img src={siete} alt='7' className='itemSietes'/>,<img src={bar} alt='㍴' className='itemSietes'/>,<img src={doblebar} alt='㍴㍴' className='itemSietes'/>,<img src={triplebar} alt='㍴㍴㍴' className='itemSietes'/>,
-                     <img src={estrella} alt='⭐' className='itemSietes'/>,<img src={cerezas} alt='🍒' className='itemSietes'/>,<img src={sandia} alt='🍉' className='itemSietes'/>,<img src={limon} alt='🍋' className='itemSietes'/>,
-                     <img src={uvas} alt='🍇' className='itemSietes'/>,<img src={naranja} alt='🟠' className='itemSietes'/>,<img src={fresa} alt='🍓' className='itemSietes'/>,<img src={banano} alt='🍌' className='itemSietes'/>,
-                     <img src={pera} alt='🍐' className='itemSietes'/>,<img src={arandano} alt='🫐' className='itemSietes'/>,<img src={manzana} alt='🍎' className='itemSietes'/>,
-                     <img src={trebol} alt='🍀' className='itemSietes'/>,<img src={campana} alt='🔔' className='itemSietes'/>];
+const itemsLista = [<img src={siete} alt='7' className='itemSietes'/>,<img src={bar} alt='㍴' className='itemSietes'/>,<img src={doblebar} alt='㍴㍴' className='itemSietes'/>,<img src={triplebar} alt='㍴㍴㍴' className='itemSietes'/>,
+                    <img src={estrella} alt='⭐' className='itemSietes'/>,<img src={cerezas} alt='🍒' className='itemSietes'/>,<img src={sandia} alt='🍉' className='itemSietes'/>,<img src={limon} alt='🍋' className='itemSietes'/>,
+                    <img src={uvas} alt='🍇' className='itemSietes'/>,<img src={naranja} alt='🟠' className='itemSietes'/>,<img src={fresa} alt='🍓' className='itemSietes'/>,<img src={banano} alt='🍌' className='itemSietes'/>,
+                    <img src={pera} alt='🍐' className='itemSietes'/>,<img src={arandano} alt='🫐' className='itemSietes'/>,<img src={manzana} alt='🍎' className='itemSietes'/>,
+                    <img src={trebol} alt='🍀' className='itemSietes'/>,<img src={campana} alt='🔔' className='itemSietes'/>];
 
-                     const formatterPeso = new Intl.NumberFormat('es-CO', {   //Formato moneda $ pesos Colmbianos
+const itemsPremios = [<img src={siete} alt='7' className='itemPremios'/>,<img src={bar} alt='㍴' className='itemPremios'/>,<img src={doblebar} alt='㍴㍴' className='itemPremios'/>,<img src={triplebar} alt='㍴㍴㍴' className='itemPremios'/>,
+                      <img src={estrella} alt='⭐' className='itemPremios'/>,<img src={cerezas} alt='🍒' className='itemPremios'/>,<img src={sandia} alt='🍉' className='itemPremios'/>,<img src={limon} alt='🍋' className='itemPremios'/>,
+                      <img src={uvas} alt='🍇' className='itemPremios'/>,<img src={naranja} alt='🟠' className='itemPremios'/>,<img src={fresa} alt='🍓' className='itemPremios'/>,<img src={banano} alt='🍌' className='itemPremios'/>,
+                      <img src={pera} alt='🍐' className='itemPremios'/>,<img src={arandano} alt='🫐' className='itemPremios'/>,<img src={manzana} alt='🍎' className='itemPremios'/>,
+                      <img src={trebol} alt='🍀' className='itemPremios'/>,<img src={campana} alt='🔔' className='itemPremios'/>];
+
+const formatterPeso = new Intl.NumberFormat('es-CO', {   //Formato moneda $ pesos Colmbianos
   style: 'currency',
   currency: 'COP',
   minimumFractionDigits: 0
@@ -219,73 +225,73 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
           </table> 
           <table border="1" className='Tabla-premios'>
             <tbody>
-              <tr>
-                <td className='tabla-credito'>{itemsLista[0]}</td>
-                <td className='espacio'></td>
+              <tr >
+                <td className='tabla-premios'>{itemsPremios[0]}</td>
+                <td className='tabla-premios'>{apuesta * 10}</td>
               </tr>
               <tr>
-                <td className='tabla-credito'>{itemsLista[1]}</td>
-                <td className='espacio'></td>
+                <td className='tabla-premios'>{itemsPremios[1]}</td>
+                <td className='tabla-premios'>{apuesta * 4}</td>
               </tr>
               <tr>
-                <td className='tabla-credito'>{itemsLista[2]}</td>
-                <td className='espacio'></td>
+                <td className='tabla-premios'>{itemsPremios[2]}</td>
+                <td className='tabla-premios'>{apuesta * 6}</td>
               </tr>
               <tr>
-               <td className='tabla-credito'>{itemsLista[3]}</td>
-                <td className='espacio'></td>
+               <td className='tabla-premios'>{itemsPremios[3]}</td>
+               <td className='tabla-premios'>{apuesta * 8}</td>
               </tr>
               <tr>
-                <td className='tabla-credito'>{itemsLista[4]}</td>
-                <td className='espacio'></td>
+                <td className='tabla-premios'>{itemsPremios[4]}</td>
+                <td className='tabla-premios'>{apuesta * 8}</td>
               </tr>
               <tr>
-                <td className='tabla-credito'>{itemsLista[5]}</td>
-                <td className='espacio'></td>
+                <td className='tabla-premios'>{itemsPremios[5]}</td>
+                <td className='tabla-premios'>{apuesta * 7}</td>
               </tr>
               <tr>
-                <td className='tabla-credito'>{itemsLista[6]}</td>
-                <td className='espacio'></td>
+                <td className='tabla-premios'>{itemsPremios[6]}</td>
+                <td className='tabla-premios'>{apuesta * 6}</td>
               </tr>
               <tr>
-                <td className='tabla-credito'>{itemsLista[7]}</td>
-                <td className='espacio'></td>
+                <td className='tabla-premios'>{itemsPremios[7]}</td>
+                <td className='tabla-premios'>{apuesta * 5}</td>
               </tr>
               <tr>
-                <td className='tabla-credito'>{itemsLista[8]}</td>
-                <td className='espacio'></td>
+                <td className='tabla-premios'>{itemsPremios[8]}</td>
+                <td className='tabla-premios'>{apuesta * 4}</td>
               </tr>
               <tr>
-                <td className='tabla-credito'>{itemsLista[9]}</td>
-                <td className='espacio'></td>
+                <td className='tabla-premios'>{itemsPremios[9]}</td>
+                <td className='tabla-premios'>{apuesta * 3}</td>
               </tr>
               <tr>
-                <td className='tabla-credito'>{itemsLista[10]}</td>
-                <td className='espacio'></td>
+                <td className='tabla-premios'>{itemsPremios[10]}</td>
+                <td className='tabla-premios'>{apuesta * 10}</td>
               </tr>
               <tr>
-                <td className='tabla-credito'>{itemsLista[11]}</td>
-                <td className='espacio'></td>
+                <td className='tabla-premios'>{itemsPremios[11]}</td>
+                <td className='tabla-premios'>{apuesta * 10}</td>
               </tr>
               <tr>
-                <td className='tabla-credito'>{itemsLista[12]}</td>
-                <td className='espacio'></td>
+                <td className='tabla-premios'>{itemsPremios[12]}</td>
+                <td className='tabla-premios'>{apuesta * 10}</td>
               </tr>
               <tr>
-                <td className='tabla-credito'>{itemsLista[13]}</td>
-                <td className='espacio'></td>
+                <td className='tabla-premios'>{itemsPremios[13]}</td>
+                <td className='tabla-premios'>{apuesta * 10}</td>
               </tr>
               <tr>
-                <td className='tabla-credito'>{itemsLista[14]}</td>
-                <td className='espacio'></td>
+                <td className='tabla-premios'>{itemsPremios[14]}</td>
+                <td className='tabla-premios'>{apuesta * 10}</td>
               </tr>
               <tr>
-                <td className='tabla-credito'>{itemsLista[15]}</td>
-                <td className='espacio'></td>
+                <td className='tabla-premios'>{itemsPremios[15]}</td>
+                <td className='tabla-premios'>{apuesta * 10}</td>
               </tr>
               <tr>
-                <td className='tabla-credito'>{itemsLista[16]}</td>
-                <td className='espacio'></td>
+                <td className='tabla-premios'>{itemsPremios[16]}</td>
+                <td className='tabla-premios'>{apuesta * 10}</td>
               </tr>
             </tbody>
           </table> 
