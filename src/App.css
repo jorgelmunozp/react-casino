@@ -16,6 +16,7 @@
 }
 .App-tabla-credito {								                /***** Tabla credito *****/
   margin-left: -47vw;
+  display: grid;
 }
 .App-tabla-logo {
   position: absolute;
@@ -88,6 +89,9 @@
   text-align: center;
   font-size: calc(10px + 2vmin);
 }
+.tabla-credito td{
+  padding: 5px 0 5px 0;
+}
 .iconoMonedaTablero {
   color: gold;
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
@@ -97,7 +101,7 @@
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
 }
 input[type='number'] {
-  width: 98%;
+  width: auto;
   height: inherit;
   font-size: inherit;
   text-align: center;
@@ -147,7 +151,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   .App-logo {                                       /***** Logo *****/
     height: 30px;
   }
@@ -162,15 +166,18 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 4px 0 4px 0;
   }
   .tabla-credito {
-    font-size: calc(6px + 2vmin);
+    font-size: calc(7px + 2vmin);
+  }
+  .tabla-credito tr {
+    display: grid;
   }
   .boton-jugar {
     padding: 12px 50px 12px 50px;
     font-size: calc(8px + 1vmin);
   }
-  input[type='number'] {
+  /* input[type='number'] {
     width: 98%;
-  }
+  } */
   input[type=number]::-webkit-inner-spin-button,  
   input[type=number]::-webkit-outer-spin-button { 
     height: calc(8px + 2vmin);

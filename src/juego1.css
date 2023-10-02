@@ -29,9 +29,6 @@
   background: url("/public/fondoAzul.jpg") ;
   padding: 55px 40px 55px 40px;
 }
-.tabla-credito td{
-  padding: 5px 0 5px 0;
-}
 .Tabla-apuesta {                        /* Tabla de la alerta y el botón */
   font-size: 6vw;
   border-collapse: collapse;

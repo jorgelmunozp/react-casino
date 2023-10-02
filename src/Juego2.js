@@ -110,10 +110,8 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
           <table border="1" className='tabla-credito'>
             <tbody>
               <tr>
-                <td><FaMoneyBillAlt className='iconoBilleteTablero'/></td>
-                <td>{formatterPeso.format(credito)}</td>
-                <td>acumulado <FaCoins className='iconoMonedaTablero'/></td>
-                <td>{formatterMiles.format(acumulado)}</td>
+                <td>bote <FaMoneyBillAlt className='iconoBilleteTablero'/> {formatterPeso.format(credito)}</td>
+                <td>acumulado <FaCoins className='iconoMonedaTablero'/> {formatterMiles.format(acumulado)}</td>
               </tr>
             </tbody>
           </table> 
@@ -205,12 +203,9 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
           <table border="1" className='tabla-credito'>
             <tbody>
               <tr>
-                <td>crédito <FaCoins className='iconoMonedaTablero'/></td>
-                <td>{formatterMiles.format(credito/10)}</td>
-                <td>apuesta <RiCoinFill className='iconoMonedaTablero'/></td>
-                <td>{<input onChange={(e) => {apuesta=e.target.value; setApuesta(apuesta)}} type={'number'} defaultValue={apuesta} min={10} max={100} step={10} autoComplete='off'/>}</td>
-                <td>ganancia <GiTwoCoins className='iconoMonedaTablero'/></td>
-                <td>{formatterMiles.format(ganancia)}</td>
+                <td>crédito <FaCoins className='iconoMonedaTablero'/> {formatterMiles.format(credito/10)}</td>
+                <td>apuesta <RiCoinFill className='iconoMonedaTablero'/> {<input onChange={(e) => {apuesta=e.target.value; setApuesta(apuesta)}} type={'number'} defaultValue={apuesta} min={10} max={100} step={10} autoComplete='off'/>}</td>
+                <td>ganancia <GiTwoCoins className='iconoMonedaTablero'/> {formatterMiles.format(ganancia)}</td>
               </tr>
             </tbody>
           </table> 
