@@ -73,7 +73,7 @@ const Juego1 = ({credito,setCredito,acumulado,setAcumulado}) => {
         <div className='App-body-divTablero'>
           <table border="1" className='tabla-credito'>
             <tbody>
-            <tr>
+              <tr>
                 <td>bote <FaMoneyBillAlt className='iconoBilleteTablero'/> {formatterPeso.format(credito)}</td>
                 <td>acumulado <FaCoins className='iconoMonedaTablero'/> {formatterMiles.format(acumulado)}</td>
               </tr>
@@ -125,7 +125,7 @@ const Juego1 = ({credito,setCredito,acumulado,setAcumulado}) => {
           <br/>
           <table border="1" className='tabla-credito'>
             <tbody>
-            <tr>
+              <tr>
                 <td>crédito <FaCoins className='iconoMonedaTablero'/> {formatterMiles.format(credito/10)}</td>
                 <td>apuesta <RiCoinFill className='iconoMonedaTablero'/> {<input onChange={(e) => {apuesta=e.target.value; setApuesta(apuesta)}} type={'number'} defaultValue={apuesta} min={10} max={100} step={10} autoComplete='off'/>}</td>
                 <td>ganancia <GiTwoCoins className='iconoMonedaTablero'/> {formatterMiles.format(ganancia)}</td>
@@ -151,6 +151,8 @@ function itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia
   if(credito > 0 && credito >= (apuesta*10)){
     credito = credito - (apuesta*10);
     setCredito(credito);
+    setAlerta(alertaInicial);
+    setGanancia(0);
     audioCoin();
 
     for(let i=0;i<5;i++){                   //Llena todas las posiciones con items de la lista con posiciones al azar
@@ -221,8 +223,6 @@ function itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia
       setDisabled(true);
       setTimeout(() => {
         setDisabled(false);
-        setAlerta(alertaInicial);
-        setGanancia(0);
       }, timeout);
     }
     //------------------- Flush (Palo igual)  -------------------//
@@ -247,8 +247,6 @@ function itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia
       setDisabled(true);
       setTimeout(() => {
         setDisabled(false);
-        setAlerta(alertaInicial);
-        setGanancia(0);
       }, timeout);
     }
   }
@@ -275,8 +273,6 @@ function gananciaPoker(credito,setCredito,apuesta,ganancia,setGanancia,acumulado
   setDisabled(true);
   setTimeout(() => {
     setDisabled(false);
-    setAlerta(alertaInicial);
-    setGanancia(0);
   }, timeout);
 };
 //------------------- Ternas (3 cartas iguales)  -------------------//
@@ -299,8 +295,6 @@ function gananciaTerna(credito,setCredito,apuesta,ganancia,setGanancia,acumulado
   setDisabled(true);
   setTimeout(() => {
     setDisabled(false);
-    setAlerta(alertaInicial);
-    setGanancia(0);
   }, timeout);
 };
 

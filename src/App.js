@@ -1,7 +1,7 @@
 import logo from './images/logo.png';
 import './App.css';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import Juego1 from './Juego1';
 import Juego2 from './Juego2';
@@ -78,17 +78,21 @@ function App() {
       <header className="App-header">
         <div className='App-header-div'>
           <table className='App-tabla-credito'>
-            <tr>
-              <td><h1><FaMoneyBillAlt className='iconoBilleteTablero'/>{formatterPeso.format(credito)}</h1></td>
-              <td><h1><FaCoins className='iconoMonedaTablero'/> {formatterPeso.format(acumulado)}</h1></td>
-            </tr>
+            <tbody>
+              <tr>
+                <td><h1><FaMoneyBillAlt className='iconoBilleteTablero'/>{formatterPeso.format(credito)}</h1></td>
+                <td><h1><FaCoins className='iconoMonedaTablero'/> {formatterPeso.format(acumulado)}</h1></td>
+              </tr>
+            </tbody>
           </table>
           <table className='App-tabla-logo'>
-            <tr>
-              <td><img src={logo} className="App-logo" alt="logo" /></td>
-              <td>&nbsp;</td>
-              <td><h1 id='titulo'>Casino</h1></td>
-            </tr>
+            <tbody>
+              <tr>
+                <td><img src={logo} className="App-logo" alt="logo" /></td>
+                <td>&nbsp;</td>
+                <td><h1 id='titulo'>Casino</h1></td>
+              </tr>
+            </tbody>
           </table>
           <nav className='App-nav'>
             <button onClick={() => setJuego(1)} className='App-nav-item'>póker</button>

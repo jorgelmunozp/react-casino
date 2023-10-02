@@ -44,17 +44,17 @@
   position: absolute;
 }
 .marquee-inner.to-bottom{
-  animation: marqueeBottom 0.4s linear;
-  -webkit-animation: marqueeBottom 0.4s linear;
-  -moz-animation: marqueeBottom 0.4s linear;
-  -o-animation: marqueeBottom 0.4s linear;
+  animation: marqueeBottom 0.3s linear;
+  -webkit-animation: marqueeBottom 0.3s linear;
+  -moz-animation: marqueeBottom 0.3s linear;
+  -o-animation: marqueeBottom 0.3s linear;
 }
 .marquee-item{
   width: 260px;
   height: 160px;
   display: block;
   margin:0 3.5px 0 3.5px;
-  transition: all .2s ease-out;
+  transition: all .2s ease;
 }
 @keyframes marqueeBottom{
   0% { top: -100%; }

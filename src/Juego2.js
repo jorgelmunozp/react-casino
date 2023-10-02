@@ -68,10 +68,10 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
   const [alerta, setAlerta] = useState(alertaInicial);                  // Alert message
   const [disabled, setDisabled] = useState(false);                      // Disabled button 
   
-  let sonidoMayor = new Audio(mp3Mayor);
-  let sonidoTriple = new Audio(mp3Triple);
-  let sonidoCuadruple = new Audio(mp3Cuadruple);
-  let sonidoCoin = new Audio(mp3Coin);
+  const sonidoMayor = new Audio(mp3Mayor);
+  const sonidoTriple = new Audio(mp3Triple);
+  const sonidoCuadruple = new Audio(mp3Cuadruple);
+  const sonidoCoin = new Audio(mp3Coin);
   const audioMayor = () => {
     sonidoMayor.play();
   };
@@ -87,25 +87,19 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
 
 
 
+  const handleClick = () => {
+    console.log('handleClick')
+    setStartGiroItems('running');
 
-
-  let [translate, setTranslate] = useState(0);
-  let [shouldTransition, setShouldTransition] = useState(true);
-
-  function handleClick() {
-    setShouldTransition(false);
-    setTranslate(0);
-    setStartGiroItems('paused');
-  }
+    setTimeout(() => {
+      setStartGiroItems('paused');
+    }, 2100);
+    
+  };
 
   useEffect(() => {
-    if (translate === 0) {
-      setShouldTransition(true);
-      setTranslate(100);
-      
-    }
-    setStartGiroItems('running');
-  }, [translate]);
+    handleClick()
+  }, []);
 
   return (
       <div className="App">
@@ -113,7 +107,7 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
           <table border="1" className='tabla-credito'>
             <tbody>
               <tr>
-                <td>bote <FaMoneyBillAlt className='iconoBilleteTablero'/> {formatterPeso.format(credito)}</td>
+                <td>bote {startGiroItems} <FaMoneyBillAlt className='iconoBilleteTablero'/> {formatterPeso.format(credito)}</td>
                 <td>acumulado <FaCoins className='iconoMonedaTablero'/> {formatterMiles.format(acumulado)}</td>
               </tr>
             </tbody>
@@ -123,7 +117,8 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
           <div className="marquee-wrapper">
             <div className="container">
               <div className="marquee-block">
-                <div className="marquee-inner to-bottom" style={{ 'animation-play-state':startGiroItems,'animation-iteration-count':cantidadGiroItems.toString(10)}}>
+                {/* <div className="marquee-inner to-bottom" style={{ 'animationPlayState':startGiroItems,'animationIterationCount':cantidadGiroItems.toString(10)}}> */}
+                <div className="marquee-inner to-bottom" style={{ 'animationPlayState':startGiroItems,'animationIterationCount':cantidadGiroItems.toString(10)}}>
                   <span>
                     <div style={{'backgroundColor': colorItemWin[0][0]}} className="marquee-item">{item[0][0]}</div>
                     <div style={{'backgroundColor': colorItemWin[1][0]}} className="marquee-item">{item[1][0]}</div>
@@ -139,7 +134,7 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
             </div>
             <div className="container">
               <div className="marquee-block">
-                <div className="marquee-inner to-bottom" style={{ 'animation-play-state':startGiroItems,'animation-iteration-count':(cantidadGiroItems+1).toString(10)}}>
+                <div className="marquee-inner to-bottom" style={{ 'animationPlayState':startGiroItems,'animationIterationCount':(cantidadGiroItems+1).toString(10)}}>
                   <span>
                     <div style={{'backgroundColor': colorItemWin[0][1]}} className="marquee-item">{item[0][1]}</div>
                     <div style={{'backgroundColor': colorItemWin[1][1]}} className="marquee-item">{item[1][1]}</div>
@@ -155,7 +150,7 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
             </div>
             <div className="container">
               <div className="marquee-block">
-                <div className="marquee-inner to-bottom" style={{ 'animation-play-state':startGiroItems,'animation-iteration-count':(cantidadGiroItems+2).toString(10)}}>
+                <div className="marquee-inner to-bottom" style={{ 'animationPlayState':startGiroItems,'animationIterationCount':(cantidadGiroItems+2).toString(10)}}>
                   <span>
                     <div style={{'backgroundColor': colorItemWin[0][2]}} className="marquee-item">{item[0][2]}</div>
                     <div style={{'backgroundColor': colorItemWin[1][2]}} className="marquee-item">{item[1][2]}</div>
@@ -171,7 +166,7 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
             </div> 
             <div className="container">
               <div className="marquee-block">
-                <div className="marquee-inner to-bottom" style={{ 'animation-play-state':startGiroItems,'animation-iteration-count':(cantidadGiroItems+3).toString(10)}}>
+                <div className="marquee-inner to-bottom" style={{ 'animationPlayState':startGiroItems,'animationIterationCount':(cantidadGiroItems+3).toString(10)}}>
                   <span>
                     <div style={{'backgroundColor': colorItemWin[0][3]}} className="marquee-item">{item[0][3]}</div>
                     <div style={{'backgroundColor': colorItemWin[1][3]}} className="marquee-item">{item[1][3]}</div>
@@ -187,7 +182,7 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
             </div> 
             <div className="container">
               <div className="marquee-block">
-                <div className="marquee-inner to-bottom" style={{ 'animation-play-state':startGiroItems,'animation-iteration-count':(cantidadGiroItems+4).toString(10)}}>
+                <div className="marquee-inner to-bottom" style={{ 'animationPlayState':startGiroItems,'animationIterationCount':(cantidadGiroItems+4).toString(10)}}>
                   <span>
                     <div style={{'backgroundColor': colorItemWin[0][4]}} className="marquee-item">{item[0][4]}</div>
                     <div style={{'backgroundColor': colorItemWin[1][4]}} className="marquee-item">{item[1][4]}</div>
@@ -217,8 +212,81 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
               <tr>
                 <td className='tabla-credito'><label className='cuadro-alerta'>{alerta}</label></td>
                 <td className='espacio'></td>
-                <td className='tabla-credito'><button type='button' className='boton-jugar' onClick={() => itemAleatorio(items,credito,setCredito,item,setItem,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,itemsLista[0],colorItemWin,setColorItemWin,audioMayor,audioCuadruple,audioTriple,audioCoin,startGiroItems,setStartGiroItems,cantidadGiroItems,setCantidadGiroItems)} disabled={disabled} autoFocus={true}>Jugar</button></td>
+                {/* <td className='tabla-credito'><button type='button' className='boton-jugar' onClick={() => itemAleatorio(items,credito,setCredito,item,setItem,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,itemsLista[0],colorItemWin,setColorItemWin,audioMayor,audioCuadruple,audioTriple,audioCoin,startGiroItems,setStartGiroItems,cantidadGiroItems,setCantidadGiroItems)} disabled={disabled} autoFocus={true}>Jugar</button></td> */}
+                <td className='tabla-credito'><button type='button' className='boton-jugar' onClick={() => handleClick()} disabled={disabled} autoFocus={true}>Jugar</button></td>
                 </tr>
+            </tbody>
+          </table> 
+          <table border="1" className='Tabla-premios'>
+            <tbody>
+              <tr>
+                <td className='tabla-credito'>{itemsLista[0]}</td>
+                <td className='espacio'></td>
+              </tr>
+              <tr>
+                <td className='tabla-credito'>{itemsLista[1]}</td>
+                <td className='espacio'></td>
+              </tr>
+              <tr>
+                <td className='tabla-credito'>{itemsLista[2]}</td>
+                <td className='espacio'></td>
+              </tr>
+              <tr>
+               <td className='tabla-credito'>{itemsLista[3]}</td>
+                <td className='espacio'></td>
+              </tr>
+              <tr>
+                <td className='tabla-credito'>{itemsLista[4]}</td>
+                <td className='espacio'></td>
+              </tr>
+              <tr>
+                <td className='tabla-credito'>{itemsLista[5]}</td>
+                <td className='espacio'></td>
+              </tr>
+              <tr>
+                <td className='tabla-credito'>{itemsLista[6]}</td>
+                <td className='espacio'></td>
+              </tr>
+              <tr>
+                <td className='tabla-credito'>{itemsLista[7]}</td>
+                <td className='espacio'></td>
+              </tr>
+              <tr>
+                <td className='tabla-credito'>{itemsLista[8]}</td>
+                <td className='espacio'></td>
+              </tr>
+              <tr>
+                <td className='tabla-credito'>{itemsLista[9]}</td>
+                <td className='espacio'></td>
+              </tr>
+              <tr>
+                <td className='tabla-credito'>{itemsLista[10]}</td>
+                <td className='espacio'></td>
+              </tr>
+              <tr>
+                <td className='tabla-credito'>{itemsLista[11]}</td>
+                <td className='espacio'></td>
+              </tr>
+              <tr>
+                <td className='tabla-credito'>{itemsLista[12]}</td>
+                <td className='espacio'></td>
+              </tr>
+              <tr>
+                <td className='tabla-credito'>{itemsLista[13]}</td>
+                <td className='espacio'></td>
+              </tr>
+              <tr>
+                <td className='tabla-credito'>{itemsLista[14]}</td>
+                <td className='espacio'></td>
+              </tr>
+              <tr>
+                <td className='tabla-credito'>{itemsLista[15]}</td>
+                <td className='espacio'></td>
+              </tr>
+              <tr>
+                <td className='tabla-credito'>{itemsLista[16]}</td>
+                <td className='espacio'></td>
+              </tr>
             </tbody>
           </table> 
         </div>
@@ -231,8 +299,10 @@ function itemAleatorio(items,credito,setCredito,item,setItem,apuesta,ganancia,se
   if(credito > 0 && credito >= (apuesta*10)){
     credito = credito - (apuesta*10);
     setCredito(credito);
+    setAlerta(alertaInicial);
+    setGanancia(0);
    
-    startGiroItems = 'running';
+    // startGiroItems = 'running';
     setStartGiroItems('running');
     audioCoin();
 
@@ -403,8 +473,6 @@ function gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia
   setDisabled(true);
   setTimeout(() => {
     setDisabled(false);
-    setAlerta(alertaInicial);
-    setGanancia(0);
   }, timeout);
 };
 //------------------- Cuádruples (4 en línea) -------------------//
@@ -431,8 +499,6 @@ function gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGananci
    setDisabled(true);
    setTimeout(() => {
      setDisabled(false);
-     setAlerta(alertaInicial);
-     setGanancia(0);
    }, timeout);
 };
 //------------------- Triples (3 en línea) -------------------//
@@ -458,8 +524,6 @@ function gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,
   setDisabled(true);
   setTimeout(() => {
     setDisabled(false);
-    setAlerta(alertaInicial);
-    setGanancia(0);
   }, timeout);
 };
 
