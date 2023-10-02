@@ -218,10 +218,11 @@ function itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia
       setAcumulado(acumulado);
       setGanancia(ganancia);
       setCredito(credito);
-      setDisabled(true)
+      setDisabled(true);
       setTimeout(() => {
-        setDisabled(false)
-        setAlerta(alertaInicial)
+        setDisabled(false);
+        setAlerta(alertaInicial);
+        setGanancia(0);
       }, timeout);
     }
     //------------------- Flush (Palo igual)  -------------------//
@@ -243,10 +244,11 @@ function itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia
       setAcumulado(acumulado);
       setGanancia(ganancia);
       setCredito(credito);
-      setDisabled(true)
+      setDisabled(true);
       setTimeout(() => {
-        setDisabled(false)
-        setAlerta(alertaInicial)
+        setDisabled(false);
+        setAlerta(alertaInicial);
+        setGanancia(0);
       }, timeout);
     }
   }
@@ -270,10 +272,11 @@ function gananciaPoker(credito,setCredito,apuesta,ganancia,setGanancia,acumulado
   setAcumulado(acumulado);
   setGanancia(ganancia);
   setCredito(credito);
-  setDisabled(true)
+  setDisabled(true);
   setTimeout(() => {
-    setDisabled(false)
-    setAlerta(alertaInicial)
+    setDisabled(false);
+    setAlerta(alertaInicial);
+    setGanancia(0);
   }, timeout);
 };
 //------------------- Ternas (3 cartas iguales)  -------------------//
@@ -293,10 +296,11 @@ function gananciaTerna(credito,setCredito,apuesta,ganancia,setGanancia,acumulado
   setAcumulado(acumulado);
   setGanancia(ganancia);
   setCredito(credito);
-  setDisabled(true)
+  setDisabled(true);
   setTimeout(() => {
-    setDisabled(false)
-    setAlerta(alertaInicial)
+    setDisabled(false);
+    setAlerta(alertaInicial);
+    setGanancia(0);
   }, timeout);
 };
 
