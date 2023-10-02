@@ -10,7 +10,12 @@
   padding: 10px 0px 0px 0px;
   filter: drop-shadow(4px 4px #fff);
 }
-
+.itemPremios {
+  width: 20px;
+  background-color: transparent;
+  padding: 5px 0px 0px 0px;
+  filter: drop-shadow(1px 1px #fff);
+}
 
 
 .marquee-wrapper{                     /* Marco de las cartas */
@@ -73,19 +78,6 @@
   100% { top: 0; }
 }
 
-
-.tabla-premios {
-  background-color: #282c34;
-  width: 100%;
-  text-align: center;
-  font-size: calc(8px + 2vmin);
-}
-.itemPremios {
-  width: 30px;
-  background-color: transparent;
-  padding: 5px 0px 0px 0px;
-  filter: drop-shadow(1px 1px #fff);
-}
 
 
 @media screen and (max-width: 1400px) {

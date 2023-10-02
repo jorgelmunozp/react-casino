@@ -218,8 +218,8 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
               <tr>
                 <td className='tabla-credito'><label className='cuadro-alerta'>{alerta}</label></td>
                 <td className='espacio'></td>
-                {/* <td className='tabla-credito'><button type='button' className='boton-jugar' onClick={() => itemAleatorio(items,credito,setCredito,item,setItem,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,itemsLista[0],colorItemWin,setColorItemWin,audioMayor,audioCuadruple,audioTriple,audioCoin,startGiroItems,setStartGiroItems,cantidadGiroItems,setCantidadGiroItems)} disabled={disabled} autoFocus={true}>Jugar</button></td> */}
-                <td className='tabla-credito'><button type='button' className='boton-jugar' onClick={() => handleClick()} disabled={disabled} autoFocus={true}>Jugar</button></td>
+                <td className='tabla-credito'><button type='button' className='boton-jugar' onClick={() => itemAleatorio(items,credito,setCredito,item,setItem,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,itemsLista[0],colorItemWin,setColorItemWin,audioMayor,audioCuadruple,audioTriple,audioCoin,startGiroItems,setStartGiroItems,cantidadGiroItems,setCantidadGiroItems)} disabled={disabled} autoFocus={true}>Jugar</button></td>
+                {/* <td className='tabla-credito'><button type='button' className='boton-jugar' onClick={() => handleClick()} disabled={disabled} autoFocus={true}>Jugar</button></td> */}
                 </tr>
             </tbody>
           </table> 

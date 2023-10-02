@@ -137,6 +137,15 @@ input[type=number]::-webkit-outer-spin-button {
   cursor: pointer;
 }
 
+.tabla-premios {
+  /* background-color: #282c34; */
+  width: 100%;
+  text-align: center;
+  font-size: calc(8px + 2vmin);
+}
+
+
+
 @media screen and (max-width: 1400px) {
   .App-header {
     min-height: 50px;
