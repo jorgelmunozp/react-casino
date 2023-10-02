@@ -27,8 +27,10 @@ import { FaCoins,FaMoneyBillAlt } from 'react-icons/fa';
 import { GiTwoCoins } from 'react-icons/gi';
 import { RiCoinFill } from 'react-icons/ri';
 
-const bet = 10;
+const bet = 10;                                                        // Apuesta inicial
 const colorWin = 'rgb(255,215,0,1)';
+const alertaInicial = "apuesta y buena suerte!";                       // Alerta para los mensajes del juego
+const timeout = 2000;                                                  // Tiempo de reactivación de los controles después de una ganancia
 
  const itemsLista = [<img src={siete} alt='7' className='itemSietes'/>,<img src={bar} alt='㍴' className='itemSietes'/>,<img src={doblebar} alt='㍴㍴' className='itemSietes'/>,<img src={triplebar} alt='㍴㍴㍴' className='itemSietes'/>,
                      <img src={estrella} alt='⭐' className='itemSietes'/>,<img src={cerezas} alt='🍒' className='itemSietes'/>,<img src={sandia} alt='🍉' className='itemSietes'/>,<img src={limon} alt='🍋' className='itemSietes'/>,
@@ -46,7 +48,6 @@ const formatterMiles = new Intl.NumberFormat('es-CO', {   //Formato miles para c
   minimumFractionDigits: 0
 });
 
-let alerta = "apuesta y buena suerte!";                  // Alerta para los mensajes del juego
 
 const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {  
   const [ganancia,setGanancia] = useState(0);
@@ -64,7 +65,9 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
  
   const [startGiroItems,setStartGiroItems] = useState('paused');
   const [cantidadGiroItems,setCantidadGiroItems] = useState(3);
-
+  const [alerta, setAlerta] = useState(alertaInicial);                  // Alert message
+  const [disabled, setDisabled] = useState(false);                      // Disabled button 
+  
   let sonidoMayor = new Audio(mp3Mayor);
   let sonidoTriple = new Audio(mp3Triple);
   let sonidoCuadruple = new Audio(mp3Cuadruple);
@@ -212,9 +215,9 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
           <table border="1" className='Tabla-apuesta'>
             <tbody>
               <tr>
-                <td className='tabla-credito'><label className='cuadro-alerta'>{alerta !== "apuesta y buena suerte!"? alerta + "! ganaste X créditos":"apuesta y buena suerte!"}</label></td>
+                <td className='tabla-credito'><label className='cuadro-alerta'>{alerta}</label></td>
                 <td className='espacio'></td>
-                <td className='tabla-credito'><button type='button' className='boton-jugar' onClick={() => itemAleatorio(items,credito,setCredito,item,setItem,apuesta,ganancia,setGanancia,acumulado,setAcumulado,itemsLista[0],colorItemWin,setColorItemWin,audioMayor,audioCuadruple,audioTriple,audioCoin,startGiroItems,setStartGiroItems,cantidadGiroItems,setCantidadGiroItems)}>Jugar</button></td>
+                <td className='tabla-credito'><button type='button' className='boton-jugar' onClick={() => itemAleatorio(items,credito,setCredito,item,setItem,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,itemsLista[0],colorItemWin,setColorItemWin,audioMayor,audioCuadruple,audioTriple,audioCoin,startGiroItems,setStartGiroItems,cantidadGiroItems,setCantidadGiroItems)} disabled={disabled} autoFocus={true}>Jugar</button></td>
                 </tr>
             </tbody>
           </table> 
@@ -224,7 +227,7 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
 }
 
 
-function itemAleatorio(items,credito,setCredito,item,setItem,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorItemWin,setColorItemWin,audioMayor,audioCuadruple,audioTriple,audioCoin,startGiroItems,setStartGiroItems,cantidadGiroItems,setCantidadGiroItems) {
+function itemAleatorio(items,credito,setCredito,item,setItem,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorItemWin,setColorItemWin,audioMayor,audioCuadruple,audioTriple,audioCoin,startGiroItems,setStartGiroItems,cantidadGiroItems,setCantidadGiroItems) {
   if(credito > 0 && credito >= (apuesta*10)){
     credito = credito - (apuesta*10);
     setCredito(credito);
@@ -244,138 +247,138 @@ function itemAleatorio(items,credito,setCredito,item,setItem,apuesta,ganancia,se
     
     //------------------- Quíntuples (5 en línea) -------------------//
     if((item[0][0] === item[0][1] && item[0][1] === item[0][2] && item[0][2] === item[0][3] && item[0][3] === item[0][4])){
-      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,0,0,0,1,0,2,0,3,0,4);
+      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,0,0,0,1,0,2,0,3,0,4);
     }
     else if((item[1][0] === item[1][1] && item[1][1] === item[1][2] && item[1][2] === item[1][3] && item[1][3] === item[1][4])){
-      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,1,0,1,1,1,2,1,3,1,4);
+      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,1,0,1,1,1,2,1,3,1,4);
     }
     else if((item[2][0] === item[2][1] && item[2][1] === item[2][2] && item[2][2] === item[2][3] && item[2][3] === item[2][4])){
-      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,2,0,2,1,2,2,2,3,2,4);
+      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,2,0,2,1,2,2,2,3,2,4);
     }
     else if((item[0][0] === item[1][1] && item[1][1] === item[2][2] && item[2][2] === item[1][3] && item[1][3] === item[0][4])){
-      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,0,0,1,1,2,2,1,3,0,4);
+      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,0,0,1,1,2,2,1,3,0,4);
     }
     else if((item[2][0] === item[1][1] && item[1][1] === item[0][2] && item[0][2] === item[1][3] && item[1][3] === item[2][4])){
-      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,2,0,1,1,0,2,1,3,2,4);
+      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,2,0,1,1,0,2,1,3,2,4);
     }
     else if((item[0][0] === item[1][1] && item[1][1] === item[1][2] && item[1][2] === item[1][3] && item[1][3] === item[2][4])){
-      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,0,0,1,1,1,2,1,3,2,4);
+      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,0,0,1,1,1,2,1,3,2,4);
     }
     else if((item[2][0] === item[1][1] && item[1][1] === item[1][2] && item[1][2] === item[1][3] && item[1][3] === item[0][4])){
-      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,2,0,1,1,1,2,1,3,0,4);
+      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,2,0,1,1,1,2,1,3,0,4);
     }
     else if((item[0][4] === item[1][3] && item[1][3] === item[2][2] && item[2][2] === item[1][1] && item[1][1] === item[2][0])){
-      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,0,4,1,3,2,2,1,1,2,0);
+      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,0,4,1,3,2,2,1,1,2,0);
     }
     else if((item[2][4] === item[1][3] && item[1][3] === item[0][2] && item[0][2] === item[1][1] && item[1][1] === item[0][0])){
-      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,2,4,1,3,0,2,1,1,0,0);
+      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,2,4,1,3,0,2,1,1,0,0);
     }
     else if((item[0][4] === item[1][3] && item[1][3] === item[1][2] && item[1][2] === item[1][1] && item[1][1] === item[2][0])){
-      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,0,4,1,3,1,2,1,1,2,0);     
+      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,0,4,1,3,1,2,1,1,2,0);     
     }
     else if((item[2][4] === item[1][3] && item[1][3] === item[1][2] && item[1][2] === item[1][1] && item[1][1] === item[0][0])){
-      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,2,4,1,3,1,2,1,1,0,0);
+      gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,2,4,1,3,1,2,1,1,0,0);
     }
     //------------------- Cuádruples (4 en línea) -------------------//
     else if((item[0][0] === item[0][1] && item[0][1] === item[0][2] && item[0][2] === item[0][3])){
-      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,0,0,0,1,0,2,0,3);
+      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,0,0,0,1,0,2,0,3);
     }
     else if((item[1][0] === item[1][1] && item[1][1] === item[1][2] && item[1][2] === item[1][3])){
-      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,1,0,1,1,1,2,1,3);
+      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,1,0,1,1,1,2,1,3);
     }
     else if((item[2][0] === item[2][1] && item[2][1] === item[2][2] && item[2][2] === item[2][3])){
-      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,2,0,2,1,2,2,2,3);
+      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,2,0,2,1,2,2,2,3);
     }
     else if((item[0][0] === item[1][1] && item[1][1] === item[2][2] && item[2][2] === item[1][3])){
-      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,0,0,1,1,2,2,1,3);
+      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,0,0,1,1,2,2,1,3);
     }
     else if((item[2][0] === item[1][1] && item[1][1] === item[0][2] && item[0][2] === item[1][3])){
-      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,2,0,1,1,0,2,1,3);
+      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,2,0,1,1,0,2,1,3);
     }
     else if((item[0][0] === item[1][1] && item[1][1] === item[1][2] && item[1][1] === item[1][3])){
-      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,0,0,1,1,1,2,1,3);
+      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,0,0,1,1,1,2,1,3);
     }
     else if((item[2][0] === item[1][1] && item[1][1] === item[1][2] && item[1][1] === item[1][3])){
-      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,2,0,1,1,1,2,1,3);
+      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,2,0,1,1,1,2,1,3);
     }
     else if((item[0][4] === item[0][3] && item[0][3] === item[0][2] && item[0][2] === item[0][1])){
-      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,0,4,0,3,0,2,0,1);
+      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,0,4,0,3,0,2,0,1);
     }
     else if((item[1][4] === item[1][3] && item[1][3] === item[1][2] && item[1][2] === item[1][1])){
-      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,1,4,1,3,1,2,1,1);
+      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,1,4,1,3,1,2,1,1);
     }
     else if((item[2][4] === item[2][3] && item[2][3] === item[2][2] && item[2][2] === item[2][1])){
-      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,2,4,2,3,2,2,2,1);
+      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,2,4,2,3,2,2,2,1);
     }
     else if((item[0][4] === item[1][3] && item[1][3] === item[2][2] && item[2][2] === item[1][1])){
-      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,0,4,1,3,2,2,1,1);
+      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,0,4,1,3,2,2,1,1);
     }
     else if((item[2][4] === item[1][3] && item[1][3] === item[0][2] && item[0][2] === item[1][1])){
-      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,2,4,1,3,0,2,1,1);
+      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,2,4,1,3,0,2,1,1);
     }
     else if((item[0][4] === item[1][3] && item[1][3] === item[1][2] && item[1][2] === item[1][1])){
-      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,0,4,1,3,1,2,1,1);
+      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,0,4,1,3,1,2,1,1);
     }
     else if((item[2][4] === item[1][3] && item[1][3] === item[1][2] && item[1][2] === item[1][1])){
-      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,2,4,1,3,1,2,1,1);
+      gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,2,4,1,3,1,2,1,1);
     }
     //------------------- Triples (3 en línea) -------------------//
     else if((item[0][0] === item[0][1] && item[0][1] === item[0][2])){
-      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,0,0,0,1,0,2);
+      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,0,0,0,1,0,2);
     }
     else if((item[1][0] === item[1][1] && item[1][1] === item[1][2])){
-      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,1,0,1,1,1,2);
+      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,1,0,1,1,1,2);
     }
     else if((item[2][0] === item[2][1] && item[2][1] === item[2][2])){
-      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,2,0,2,1,2,2);
+      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,2,0,2,1,2,2);
     }
     else if((item[0][0] === item[1][1] && item[1][1] === item[2][2])){
-      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,0,0,1,1,2,2);
+      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,0,0,1,1,2,2);
     }
     else if((item[2][0] === item[1][1] && item[1][1] === item[0][2])){
-      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,2,0,1,1,0,2);
+      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,2,0,1,1,0,2);
     }
     else if((item[0][0] === item[1][1] && item[1][1] === item[1][2])){
-      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,0,0,1,1,1,2);
+      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,0,0,1,1,1,2);
     }
     else if((item[2][0] === item[1][1] && item[1][1] === item[1][2])){
-      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,2,0,1,1,1,2);
+      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,2,0,1,1,1,2);
     }
     else if((item[0][4] === item[0][3] && item[0][3] === item[0][2])){
-      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,0,4,0,3,0,2);
+      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,0,4,0,3,0,2);
     }
     else if((item[1][4] === item[1][3] && item[1][3] === item[1][2])){
-      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,1,4,1,3,1,2);
+      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,1,4,1,3,1,2);
     }
     else if((item[2][4] === item[2][3] && item[2][3] === item[2][2])){
-      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,2,4,2,3,2,2);
+      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,2,4,2,3,2,2);
     }
     else if((item[0][4] === item[1][3] && item[1][3] === item[2][2])){
-      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,0,4,1,3,2,2);
+      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,0,4,1,3,2,2);
     }
     else if((item[2][4] === item[1][3] && item[1][3] === item[0][2])){
-      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,2,4,1,3,0,2);
+      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,2,4,1,3,0,2);
     }
     else if((item[0][4] === item[1][3] && item[1][3] === item[1][2])){
-      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,0,4,1,3,1,2);
+      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,0,4,1,3,1,2);
     }
     else if((item[2][4] === item[1][3] && item[1][3] === item[1][2])){
-      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,2,4,1,3,1,2);
+      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,2,4,1,3,1,2);
     }
     else if((item[0][1] === item[0][2] && item[0][2] === item[0][3])){
-      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,0,1,0,2,0,3);
+      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,0,1,0,2,0,3);
     }
     else if((item[1][1] === item[1][2] && item[1][2] === item[1][3])){
-      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,1,1,1,2,1,3);
+      gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,1,1,1,2,1,3);
     }
     else if((item[2][1] === item[2][2] && item[2][2] === item[2][3])){   
-        gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,2,1,2,2,2,3);
+        gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,2,1,2,2,2,3);
     }
   }
 }
 
 //------------------- Quíntuples (5 en línea) -------------------//
-function gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,fil1,col1,fil2,col2,fil3,col3,fil4,col4,fil5,col5){
+function gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioMayor,fil1,col1,fil2,col2,fil3,col3,fil4,col4,fil5,col5){
   colorItemWin[fil1][col1]= colorWin;
   colorItemWin[fil2][col2]= colorWin;
   colorItemWin[fil3][col3]= colorWin;
@@ -385,12 +388,11 @@ function gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia
   if(item[fil1][col1] === siete){
     ganancia = (apuesta*10) * 10;
     audioMayor();
-    alerta = "77777";
+    setAlerta("77777! ganáste " + ganancia + " créditos")
   }else{
     ganancia = (apuesta*10) * 5;
-
     audioMayor();
-    alerta = "5 en línea";
+    setAlerta("5 en línea! ganáste " + ganancia + " créditos")
   }
   credito = credito + ganancia;
   acumulado = acumulado + (ganancia/100);
@@ -398,9 +400,15 @@ function gananciaCincoItems(credito,setCredito,item,apuesta,ganancia,setGanancia
   setAcumulado(acumulado);
   setGanancia(ganancia);
   setCredito(credito);
+  setDisabled(true);
+  setTimeout(() => {
+    setDisabled(false);
+    setAlerta(alertaInicial);
+    setGanancia(0);
+  }, timeout);
 };
 //------------------- Cuádruples (4 en línea) -------------------//
-function gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,fil1,col1,fil2,col2,fil3,col3,fil4,col4){
+function gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioCuadruple,fil1,col1,fil2,col2,fil3,col3,fil4,col4){
   colorItemWin[fil1][col1]= colorWin;
   colorItemWin[fil2][col2]= colorWin;
   colorItemWin[fil3][col3]= colorWin;
@@ -409,10 +417,10 @@ function gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGananci
 
   if(item[fil1][col1] === siete){
     ganancia = (apuesta*10) * 8;
-    alerta = "7777";
+    setAlerta("7777! ganáste " + ganancia + " créditos")
   }else{
     ganancia = (apuesta*10) * 4;
-    alerta = "4 en línea";
+    setAlerta("4 en línea! ganáste " + ganancia + " créditos")
   }
    credito = credito + ganancia;
    acumulado = acumulado + (ganancia/100);
@@ -420,9 +428,15 @@ function gananciaCuatroItems(credito,setCredito,item,apuesta,ganancia,setGananci
    setAcumulado(acumulado);
    setGanancia(ganancia);
    setCredito(credito);
+   setDisabled(true);
+   setTimeout(() => {
+     setDisabled(false);
+     setAlerta(alertaInicial);
+     setGanancia(0);
+   }, timeout);
 };
 //------------------- Triples (3 en línea) -------------------//
-function gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,fil1,col1,fil2,col2,fil3,col3){
+function gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,acumulado,setAcumulado,setAlerta,setDisabled,siete,colorWin,colorItemWin,setColorItemWin,audioTriple,fil1,col1,fil2,col2,fil3,col3){
   colorItemWin[fil1][col1]= colorWin;
   colorItemWin[fil2][col2]= colorWin;
   colorItemWin[fil3][col3]= colorWin;
@@ -430,10 +444,10 @@ function gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,
 
   if(item[fil1][col1] === siete){
       ganancia = (apuesta*10) * 6;
-      alerta = "777";
+      setAlerta("777! ganáste " + ganancia + " créditos")
   }else{
       ganancia = (apuesta*10) * 3;      
-      alerta = "3 en línea";
+      setAlerta("3 en línea! ganáste " + ganancia + " créditos")
   }
   credito = credito + ganancia;
   acumulado = acumulado + (ganancia/100);
@@ -441,6 +455,12 @@ function gananciaTresItems(credito,setCredito,item,apuesta,ganancia,setGanancia,
   setAcumulado(acumulado);
   setGanancia(ganancia);
   setCredito(credito);
+  setDisabled(true);
+  setTimeout(() => {
+    setDisabled(false);
+    setAlerta(alertaInicial);
+    setGanancia(0);
+  }, timeout);
 };
 
 
