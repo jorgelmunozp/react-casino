@@ -101,6 +101,7 @@
   }
   .itemSietes {                 /*Imagenes */
     width: 40px;
+    filter: drop-shadow(2px 2px #fff);
   }
 }
 

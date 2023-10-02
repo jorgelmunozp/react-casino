@@ -154,7 +154,7 @@ function itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia
         carta[i] = cartas[Math.floor(Math.random()*cartasLista.length)][Math.floor(Math.random()*cartasLista[0].length)];
         colorItemWin[i]= '#fff';   //Items con fondo transparente
     }
-
+    console.log("cartas: ",[carta[0],carta[1],carta[2],carta[3],carta[4]])
     setCarta([carta[0],carta[1],carta[2],carta[3],carta[4]]);
 
     //------------------- Poker (4 cartas iguales) -------------------//
@@ -179,15 +179,20 @@ function itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia
             (carta[0][0] === carta[1][0] && carta[1][0] === carta[4][0])){
               gananciaTerna(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,colorWin,colorItemWin,setColorItemWin,audioTriple,0,1,4)
     }
-    //------------------- Mayor (10JQKA)  -------------------//
-    if(carta[0][0] === '10' && carta[1][0] === 'J' && carta[2][0] === 'Q' && carta[1][0] === 'K' && carta[2][0] === 'A'){
+    //------------------- Royal Flush (10JQKA)  -------------------//
+    if(((carta[0][0] === '10' || carta[1][0] === '10' || carta[2][0] === '10' || carta[3][0] === '10' || carta[4][0] === '10' ) && 
+        (carta[0][0] === 'J' || carta[1][0] === 'J' || carta[2][0] === 'J' || carta[3][0] === 'J' || carta[4][0] === 'J') && 
+        (carta[0][0] === 'Q' || carta[1][0] === 'Q' || carta[2][0] === 'Q' || carta[3][0] === 'Q' || carta[4][0] === 'Q') && 
+        (carta[0][0] === 'K' || carta[1][0] === 'K' || carta[2][0] === 'K' || carta[3][0] === 'K' || carta[4][0] === 'K') && 
+        (carta[0][0] === 'A' || carta[1][0] === 'A' || carta[2][0] === 'A' || carta[3][0] === 'A' || carta[4][0] === 'A')) &&
+       (carta[0][1] === carta[1][1] && carta[1][1] === carta[2][1] && carta[2][1] === carta[3][1] && carta[3][1] === carta[4][1])){
       colorItemWin[0]= colorWin;
       colorItemWin[1]= colorWin;
       colorItemWin[2]= colorWin;
       colorItemWin[3]= colorWin;
       colorItemWin[4]= colorWin;
       
-      alerta = "Mayor";
+      alerta = "Royal Flush";
 
       ganancia = apuesta * 40;
       credito = credito + ganancia;
@@ -199,7 +204,7 @@ function itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia
       setCredito(credito);
     }
     //------------------- Flush (Palo igual)  -------------------//
-    if(carta[0][1] === carta[1][1] && carta[1][1] === carta[2][1] && carta[2][1] === carta[3][1] && carta[3][1] === carta[4][1] ){
+    if(carta[0][1] === carta[1][1] && carta[1][1] === carta[2][1] && carta[2][1] === carta[3][1] && carta[3][1] === carta[4][1]){
       colorItemWin[0]= colorWin;
       colorItemWin[1]= colorWin;
       colorItemWin[2]= colorWin;
@@ -219,7 +224,7 @@ function itemAleatorio(cartas,carta,setCarta,credito,setCredito,apuesta,ganancia
     }
   }
 }
-
+// **************************** GANANCIAS ****************************// 
 //------------------- Poker (4 cartas iguales) -------------------//
 function gananciaPoker(credito,setCredito,apuesta,ganancia,setGanancia,acumulado,setAcumulado,colorWin,colorItemWin,setColorItemWin,audioCuadruple,item0,item1,item2,item3){
   colorItemWin[item0]= colorWin;
