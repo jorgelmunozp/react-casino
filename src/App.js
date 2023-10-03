@@ -80,8 +80,8 @@ function App() {
           <table className='App-tabla-credito'>
             <tbody>
               <tr>
-                <td><h1><FaMoneyBillAlt className='iconoBilleteTablero'/>{formatterPeso.format(credito)}</h1></td>
-                <td><h1><FaCoins className='iconoMonedaTablero'/> {formatterPeso.format(acumulado)}</h1></td>
+                {/* <td><h1><FaMoneyBillAlt className='iconoBilleteTablero'/>{formatterPeso.format(credito)}</h1></td> */}
+                <td><h1><FaCoins className='iconoMonedaTablero'/> Jackpot {formatterPeso.format(acumulado*10)}</h1></td>
               </tr>
             </tbody>
           </table>

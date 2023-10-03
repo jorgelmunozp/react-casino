@@ -74,7 +74,7 @@ const Juego1 = ({credito,setCredito,acumulado,setAcumulado}) => {
           <table border="1" className='tabla-credito'>
             <tbody>
               <tr>
-                <td><FaMoneyBillAlt className='iconoVerdeTablero'/><label className='labelTablero'>bote</label> {formatterPeso.format(credito*10)}</td>
+                <td><FaMoneyBillAlt className='iconoVerdeTablero'/><label className='labelTablero'>bote</label> {formatterPeso.format(credito)}</td>
                 <td><FaCoins className='iconoVerdeTablero'/><label className='labelTablero'>acumulado</label> {formatterPeso.format(acumulado*10)}</td>
               </tr>
             </tbody>
@@ -148,7 +148,7 @@ const Juego1 = ({credito,setCredito,acumulado,setAcumulado}) => {
                 <td className=''>{apuesta * 3}</td>
               </tr>
               <tr>
-                <td className=''>{'Terna J,K,K,A'}</td>
+                <td className=''>{'Terna JQKA'}</td>
                 <td className=''>{apuesta * 6}</td>
               </tr>
               <tr>
@@ -156,7 +156,7 @@ const Juego1 = ({credito,setCredito,acumulado,setAcumulado}) => {
                <td className=''>{apuesta * 10}</td>
               </tr>
               <tr>
-                <td className=''>{'Poker J,K,K'}</td>
+                <td className=''>{'Poker JQK'}</td>
                 <td className=''>{apuesta * 20}</td>
               </tr>
               <tr>

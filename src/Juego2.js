@@ -113,7 +113,7 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
           <table border="1" className='tabla-credito'>
             <tbody>
               <tr>
-                <td>{startGiroItems} <FaMoneyBillAlt className='iconoVerdeTablero'/><label className='labelTablero'>bote</label> {formatterPeso.format(credito*10)}</td>
+                <td>{startGiroItems} <FaMoneyBillAlt className='iconoVerdeTablero'/><label className='labelTablero'>bote</label> {formatterPeso.format(credito)}</td>
                 <td><FaCoins className='iconoVerdeTablero'/><label className='labelTablero'> acumulado</label> {formatterPeso.format(acumulado*10)}</td>
               </tr>
             </tbody>
