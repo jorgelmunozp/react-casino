@@ -95,7 +95,7 @@ function App() {
             </tbody>
           </table>
           <nav className='App-nav'>
-            <button onClick={() => setJuego(1)} className='App-nav-item'>póker</button>
+            <button onClick={() => setJuego(1)} className='App-nav-item'>poker</button>
             <button onClick={() => setJuego(2)} className='App-nav-item'>frutas</button>
           </nav>
         </div>

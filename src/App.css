@@ -92,13 +92,21 @@
 .tabla-credito td{
   padding: 5px 0 5px 0;
 }
-.iconoMonedaTablero {
+.iconoDoradoTablero {
   color: gold;
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
+  float: left;
+  margin-left: 5%;
 }
-.iconoBilleteTablero {
+.iconoVerdeTablero {
   color: #00bb00;
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
+  float: left;
+  margin-left: 5%;
+}
+.labelTablero {
+  float: left;
+  margin-left: 5%;
 }
 input[type='number'] {
   width: auto;
@@ -202,6 +210,9 @@ input[type=number]::-webkit-outer-spin-button {
   input[type=number]::-webkit-outer-spin-button { 
     height: calc(8px + 2vmin);
     padding: 0 5px 0 5px;
+  }
+  .cuadro-alerta {
+    padding: 0 20px 0 20px !important;
   }
 }
 
