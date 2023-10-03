@@ -10,12 +10,12 @@
   padding: 10px 0px 0px 0px;
   filter: drop-shadow(4px 4px #fff);
 }
-.itemPremios {
-  width: 20px;
-  background-color: transparent;
-  padding: 5px 0px 0px 0px;
-  filter: drop-shadow(1px 1px #fff);
+.Tabla-premios-sietes {
+  width: 100%;
+  font-size: calc(8px + 2vmin);
+  border-collapse: collapse;  
 }
+
 
 
 .marquee-wrapper{                     /* Marco de las cartas */

@@ -29,16 +29,13 @@
   background: url("/public/fondoAzul.jpg") ;
   padding: 55px 40px 55px 40px;
 }
-.Tabla-apuesta {                        /* Tabla de la alerta y el botón */
-  font-size: 6vw;
-  border-collapse: collapse;
-}
 .cuadro-alerta {
   border-style: groove;
   border-color: gray;
   background-color: black;
   padding: 0 40px 0 40px;
 }
+
 
 
 @media screen and (max-width: 1400px) {

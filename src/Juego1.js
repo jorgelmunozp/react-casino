@@ -144,44 +144,44 @@ const Juego1 = ({credito,setCredito,acumulado,setAcumulado}) => {
           <table border="1" className='Tabla-premios'>
             <tbody>
               <tr>
-                <td className='tabla-premios'>{'Terna de 2 a 10'}</td>
-                <td className='tabla-premios'>{apuesta * 3}</td>
+                <td className=''>{'Terna 2 a 10'}</td>
+                <td className=''>{apuesta * 3}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{'Terna de J,K,K,A'}</td>
-                <td className='tabla-premios'>{apuesta * 6}</td>
+                <td className=''>{'Terna J,K,K,A'}</td>
+                <td className=''>{apuesta * 6}</td>
               </tr>
               <tr>
-               <td className='tabla-premios'>{'Poker de 2 a 10'}</td>
-               <td className='tabla-premios'>{apuesta * 10}</td>
+               <td className=''>{'Poker 2 a 10'}</td>
+               <td className=''>{apuesta * 10}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{'Poker de J,K,K'}</td>
-                <td className='tabla-premios'>{apuesta * 20}</td>
+                <td className=''>{'Poker J,K,K'}</td>
+                <td className=''>{apuesta * 20}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{'Poker de As'}</td>
-                <td className='tabla-premios'>{apuesta * 30}</td>
+                <td className=''>{'Poker As'}</td>
+                <td className=''>{apuesta * 30}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{'Straigth'}</td>
-                <td className='tabla-premios'>{apuesta * 4}</td>
+                <td className=''>{'Straigth'}</td>
+                <td className=''>{apuesta * 4}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{'Flush'}</td>
-                <td className='tabla-premios'>{apuesta * 6}</td>
+                <td className=''>{'Flush'}</td>
+                <td className=''>{apuesta * 6}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{'Straigth Flush'}</td>
-                <td className='tabla-premios'>{apuesta * 8}</td>
+                <td className=''>{'Straigth Flush'}</td>
+                <td className=''>{apuesta * 8}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{'Full House'}</td>
-                <td className='tabla-premios'>{apuesta * 10}</td>
+                <td className=''>{'Full House'}</td>
+                <td className=''>{apuesta * 10}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{'Royal Flush'}</td>
-                <td className='tabla-premios'>{apuesta * 50}</td>
+                <td className=''>{'Royal Flush'}</td>
+                <td className=''>{apuesta * 50}</td>
               </tr>
             </tbody>
           </table> 

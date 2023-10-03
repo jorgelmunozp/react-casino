@@ -137,13 +137,20 @@ input[type=number]::-webkit-outer-spin-button {
   cursor: pointer;
 }
 
-.tabla-premios {
+.Tabla-apuesta {                        /* Tabla de la alerta y el botón */
+  font-size: 6vw;
+  border-collapse: collapse;
+}
+.Tabla-premios {
   /* background-color: #282c34; */
   width: 100%;
-  text-align: center;
+  /* text-align: center; */
   font-size: calc(8px + 2vmin);
+  border-collapse: collapse;  
 }
-
+.Tabla-premios td {
+  width: 50%;
+}
 
 
 @media screen and (max-width: 1400px) {

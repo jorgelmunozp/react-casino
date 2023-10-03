@@ -225,73 +225,73 @@ const Juego2 = ({credito,setCredito,acumulado,setAcumulado}) => {
           </table> 
           <table border="1" className='Tabla-premios'>
             <tbody>
-              <tr >
-                <td className='tabla-premios'>{itemsPremios[0]}</td>
-                <td className='tabla-premios'>{apuesta * 10}</td>
+              <tr>
+                <td className=''>{itemsPremios[0]}</td>
+                <td className=''>{apuesta * 10}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{itemsPremios[1]}</td>
-                <td className='tabla-premios'>{apuesta * 4}</td>
+                <td className=''>{itemsPremios[1]}</td>
+                <td className=''>{apuesta * 4}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{itemsPremios[2]}</td>
-                <td className='tabla-premios'>{apuesta * 6}</td>
+                <td className=''>{itemsPremios[2]}</td>
+                <td className=''>{apuesta * 6}</td>
               </tr>
               <tr>
-               <td className='tabla-premios'>{itemsPremios[3]}</td>
-               <td className='tabla-premios'>{apuesta * 8}</td>
+               <td className=''>{itemsPremios[3]}</td>
+               <td className=''>{apuesta * 8}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{itemsPremios[4]}</td>
-                <td className='tabla-premios'>{apuesta * 8}</td>
+                <td className=''>{itemsPremios[4]}</td>
+                <td className=''>{apuesta * 8}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{itemsPremios[5]}</td>
-                <td className='tabla-premios'>{apuesta * 7}</td>
+                <td className=''>{itemsPremios[5]}</td>
+                <td className=''>{apuesta * 7}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{itemsPremios[6]}</td>
-                <td className='tabla-premios'>{apuesta * 6}</td>
+                <td className=''>{itemsPremios[6]}</td>
+                <td className=''>{apuesta * 6}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{itemsPremios[7]}</td>
-                <td className='tabla-premios'>{apuesta * 5}</td>
+                <td className=''>{itemsPremios[7]}</td>
+                <td className=''>{apuesta * 5}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{itemsPremios[8]}</td>
-                <td className='tabla-premios'>{apuesta * 4}</td>
+                <td className=''>{itemsPremios[8]}</td>
+                <td className=''>{apuesta * 4}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{itemsPremios[9]}</td>
-                <td className='tabla-premios'>{apuesta * 3}</td>
+                <td className=''>{itemsPremios[9]}</td>
+                <td className=''>{apuesta * 3}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{itemsPremios[10]}</td>
-                <td className='tabla-premios'>{apuesta * 10}</td>
+                <td className=''>{itemsPremios[10]}</td>
+                <td className=''>{apuesta * 10}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{itemsPremios[11]}</td>
-                <td className='tabla-premios'>{apuesta * 10}</td>
+                <td className=''>{itemsPremios[11]}</td>
+                <td className=''>{apuesta * 10}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{itemsPremios[12]}</td>
-                <td className='tabla-premios'>{apuesta * 10}</td>
+                <td className=''>{itemsPremios[12]}</td>
+                <td className=''>{apuesta * 10}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{itemsPremios[13]}</td>
-                <td className='tabla-premios'>{apuesta * 10}</td>
+                <td className=''>{itemsPremios[13]}</td>
+                <td className=''>{apuesta * 10}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{itemsPremios[14]}</td>
-                <td className='tabla-premios'>{apuesta * 10}</td>
+                <td className=''>{itemsPremios[14]}</td>
+                <td className=''>{apuesta * 10}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{itemsPremios[15]}</td>
-                <td className='tabla-premios'>{apuesta * 10}</td>
+                <td className=''>{itemsPremios[15]}</td>
+                <td className=''>{apuesta * 10}</td>
               </tr>
               <tr>
-                <td className='tabla-premios'>{itemsPremios[16]}</td>
-                <td className='tabla-premios'>{apuesta * 10}</td>
+                <td className=''>{itemsPremios[16]}</td>
+                <td className=''>{apuesta * 10}</td>
               </tr>
             </tbody>
           </table> 
